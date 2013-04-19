@@ -13,7 +13,7 @@ gem "bootstrap-rails-helpers"
 
 Manually include the necessary stylesheets and JavaScript files from Bootstrap.
 
-Although it has no direct dependencies on other gems than Rails it is necessary
+Although it has no direct dependencies on other gems than Rails, it is necessary
 to include Bootstrap in some way or another to make this gem useful.
 [bootstrap-sass](https://github.com/thomas-mcdonald/bootstrap-sass) is
 recommended.
@@ -85,7 +85,7 @@ Bootstrap button. That is, a button with the an icon (no text) and the size
 
 ```erb
 <%= bs_popover_button "foo", "bar"
-<%= bs_popover_button "foo", "bar", placement: "right"
+<%= bs_popover_button "foo", "bar", placement: "right" %>
 <%= bs_popover_button "foo" do %>
   <%= link_to "Google", "http://www.google.se" %>
 <% end %>
@@ -114,7 +114,7 @@ $("[data-toggle=popover]").popover(html: true)
 ```
 
 Renders an `button` tag styled as a Bootstrap button. First argument is the text
-to be rendered on the button, the other is what type of button (the is the HTML
+to be rendered on the button, the other is what type of button (that is, the HTML
 attribute `type`). Accepts all the options as [bs\_button\_to](#bs_button_to) does.
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#buttons)
@@ -126,6 +126,7 @@ attribute `type`). Accepts all the options as [bs\_button\_to](#bs_button_to) do
 ```erb
 <%= bs_label "foo" # standard label%>
 <%= bs_label "foo", style: "success" # styled label %>
+```
 
 ### <a id="tooltips"></a>Tooltips
 
@@ -136,7 +137,7 @@ attribute `type`). Accepts all the options as [bs\_button\_to](#bs_button_to) do
 Basically any helper accepts the `:tooltip` option. This will add a Bootstrap
 tooltip to the rendered component.
 
-**Note:** this helper requires JavaScript to be manually initialized. Add the
+**Note:** this option requires JavaScript to be manually initialized. Add the
 following code to your JavaScript file:
 
 ````javascript
