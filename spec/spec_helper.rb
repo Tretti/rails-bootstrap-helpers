@@ -7,7 +7,6 @@ Spork.prefork do
 
   require "rspec/rails"
   require "rspec/autorun"
-  require "bootstrap-rails-helpers"
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
@@ -17,4 +16,5 @@ Spork.prefork do
 end
 
 Spork.each_run do
+  require "bootstrap-rails-helpers"
 end

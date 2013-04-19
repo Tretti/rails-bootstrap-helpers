@@ -11,5 +11,6 @@ module BootstrapRailsHelpers
     autoload :BaseHelper, "bootstrap-rails-helpers/helpers/base_helper"
     autoload :AlertHelper, "bootstrap-rails-helpers/helpers/alert_helper"
     autoload :ButtonHelper, "bootstrap-rails-helpers/helpers/button_helper"
+    autoload :FormTagHelper, "bootstrap-rails-helpers/helpers/form_tag_helper"
   end
 end
