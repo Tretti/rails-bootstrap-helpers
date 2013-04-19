@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.13"
 
+  s.add_development_dependency "guard-rspec"
+  s.add_development_dependency "guard-spork"
   s.add_development_dependency "pry-doc"
   s.add_development_dependency "pry-exception_explorer"
   s.add_development_dependency "pry-rails"

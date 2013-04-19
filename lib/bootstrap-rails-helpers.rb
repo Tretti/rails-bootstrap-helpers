@@ -9,6 +9,7 @@ module BootstrapRailsHelpers
 
   module Helpers
     autoload :BaseHelper, "bootstrap-rails-helpers/helpers/base_helper"
+    autoload :AlertHelper, "bootstrap-rails-helpers/helpers/alert_helper"
     autoload :ButtonHelper, "bootstrap-rails-helpers/helpers/button_helper"
   end
 end
