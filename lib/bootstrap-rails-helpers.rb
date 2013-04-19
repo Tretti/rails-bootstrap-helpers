@@ -16,3 +16,5 @@ module BootstrapRailsHelpers
     autoload :OptionsHelper, "bootstrap-rails-helpers/helpers/options_helper"
   end
 end
+
+require "bootstrap-rails-helpers/rails/engine"
