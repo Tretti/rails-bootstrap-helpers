@@ -36,7 +36,7 @@ For which JavaScript file to include, follow the
 
 #### <a id="icon"></a>icon
 
-```ruby
+```erb
 icon :edit # renders an icon with the icon-edit icon
 icon :edit, invert: true # inverts the color of the icon, making it white
 ```
@@ -46,7 +46,7 @@ icon :edit, invert: true # inverts the color of the icon, making it white
 ### <a id="alerts"></a>Alerts
 
 #### <a id="bs_alert"></a>bs\_alert
-```ruby
+```erb
 <%= bs_alert "foo" %> # standard alert box
 <%= bs_alert "foo", block: true %> # alert box with block style
 <%= bs_alert "foo", dismiss_button: true %> # alert box with a dismiss button
@@ -58,7 +58,7 @@ icon :edit, invert: true # inverts the color of the icon, making it white
 
 #### <a id="bs_button_to"></a>bs\_button\_to
 
-```ruby
+```erb
 <%= bs_button_to "google", "http://www.google.se" %>
 <%= bs_button_to "google", "http://www.google.se", style: "success" %>
 <%= bs_button_to "google", "http://www.google.se", disabled: true %>
@@ -73,7 +73,7 @@ arguments and options that `link_to` accepts it also accepts the above options.
 
 #### <a id="bs_inline_button_to"></a>bs\_inline\_button\_to
 
-```ruby
+```erb
 <%= bs_inline_button_to "http://www.google.se", :edit %>
 ```
 
@@ -83,7 +83,7 @@ Bootstrap button. That is, a button with the an icon (no text) and the size
 
 #### <a id="bs_popover_button"></a>bs\_popover\_button
 
-```ruby
+```erb
 <%= bs_popover_button "foo", "bar"
 <%= bs_popover_button "foo", "bar", placement: "right"
 <%= bs_popover_button "foo" do %>
@@ -107,7 +107,7 @@ $("[data-toggle=popover]").popover(html: true)
 
 #### <a id="bs_button_tag"></a> bs\_button\_tag
 
-```ruby
+```erb
 <%= bs_button_to "google", :submit %>
 ```
 
