@@ -21,5 +21,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry-rails"
   s.add_development_dependency "pry-stack_explorer"
   s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "spork"
   s.add_development_dependency "sqlite3"
 end
