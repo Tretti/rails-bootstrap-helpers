@@ -39,9 +39,9 @@ module BootstrapRailsHelpers::Helpers::ButtonHelper
   #
   # ==== Options
   # @param :placement [String, "bottom", "top", "left", "right"]
-  def bs_popover_button_to (name, content_or_options = nil, options = {}, &block)
+  def bs_popover_button (name, content_or_options = nil, options = {}, &block)
     if block_given?
-      bs_popover_button_to(name, capture(&block).gsub("\n", ""), content_or_options || {})
+      bs_popover_button(name, capture(&block).gsub("\n", ""), content_or_options || {})
     else
       placement = options.delete(:placement) || "bottom"
 

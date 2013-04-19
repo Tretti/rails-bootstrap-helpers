@@ -53,7 +53,7 @@ describe BootstrapRailsHelpers::Helpers::ButtonHelper do
     end
   end
 
-  describe "bs_popover_button_to" do
+  describe "bs_popover_button" do
     let(:attributes) do
       {
         href: '#',
@@ -71,14 +71,14 @@ describe BootstrapRailsHelpers::Helpers::ButtonHelper do
     it "should render a button with a popover" do
       html = "<a #{html_attributes}>foo</a>"
 
-      helper.bs_popover_button_to("foo", "bar").should == html
+      helper.bs_popover_button("foo", "bar").should == html
     end
 
     context "render popover using block" do
       it "should render a button with a popover" do
         html = "<a #{html_attributes}>foo</a>"
 
-        helper.bs_popover_button_to("foo") { "bar" }.should == html
+        helper.bs_popover_button("foo") { "bar" }.should == html
       end
     end
 
@@ -87,7 +87,7 @@ describe BootstrapRailsHelpers::Helpers::ButtonHelper do
         attributes[:"data-placement"] = "top"
         html = "<a #{html_attributes}>foo</a>"
 
-        helper.bs_popover_button_to("foo", "bar", placement: "top").should == html
+        helper.bs_popover_button("foo", "bar", placement: "top").should == html
       end
     end
   end
