@@ -8,9 +8,11 @@ module BootstrapRailsHelpers
   end
 
   module Helpers
+    autoload :OptionsHelper, "bootstrap-rails-helpers/helpers/options_helper"
     autoload :BaseHelper, "bootstrap-rails-helpers/helpers/base_helper"
     autoload :AlertHelper, "bootstrap-rails-helpers/helpers/alert_helper"
     autoload :ButtonHelper, "bootstrap-rails-helpers/helpers/button_helper"
     autoload :FormTagHelper, "bootstrap-rails-helpers/helpers/form_tag_helper"
+    autoload :LabelHelper, "bootstrap-rails-helpers/helpers/label_helper"
   end
 end
