@@ -37,8 +37,8 @@ For which JavaScript file to include, follow the
 #### <a id="icon"></a>icon
 
 ```erb
-icon :edit # renders an icon with the icon-edit icon
-icon :edit, invert: true # inverts the color of the icon, making it white
+<%= icon :edit %> # renders an icon with the icon-edit icon
+<%= icon :edit, invert: true %> # inverts the color of the icon, making it white
 ```
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#icons)
