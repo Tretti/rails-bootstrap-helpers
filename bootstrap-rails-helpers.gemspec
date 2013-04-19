@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = "A Rails plugin that contains helpers for Bootstrap"
   s.description = "A Rails plugin that contains helpers for Bootstrap"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 3.2.11"
