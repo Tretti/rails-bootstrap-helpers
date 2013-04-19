@@ -25,7 +25,7 @@ initialized. You need to manually do this initialization. The following helpers
 uses JavaScript that needs manually initialization:
 
 * Any helper with the `:tooltip` option
-* bs\_popover\_button
+* [bs\_popover\_button](#bs_popover_button)
 
 For which JavaScript file to include, follow the
 [Bootstrap documentation](http://twitter.github.io/bootstrap/javascript.html).
