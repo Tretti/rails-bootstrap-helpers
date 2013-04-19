@@ -10,7 +10,7 @@ module BootstrapRailsHelpers::Helpers::AlertHelper
   # @param :block [Boolean] indicates if the alert should render with block style
   # @param :dismiss_button [Boolean] indicates if an dismiss button should be
   #        added to the alert
-  def alert_box (text, options = {})
+  def bs_alert (text, options = {})
     cls = "alert"
 
     if type = options[:type]

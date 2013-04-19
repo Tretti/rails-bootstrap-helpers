@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 
-RSpec::Matchers.define :render_alert_box do |text|
+RSpec::Matchers.define :render_bs_alert do |text|
   def options
     @options ||= { }
   end
@@ -44,7 +44,7 @@ RSpec::Matchers.define :render_alert_box do |text|
   end
 
   def got
-    @got ||= helper.alert_box(text, options)
+    @got ||= helper.bs_alert(text, options)
   end
 
   def failure_message (is_not)
