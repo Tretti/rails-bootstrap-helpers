@@ -1,6 +1,6 @@
-# Bootstrap Rails Helpers
+# Rails Bootstrap Helpers
 
-Bootstrap Rails Helpers is a plugin for Ruby on Rails that adds view helpers for
+Rails Bootstrap Helpers is a plugin for Ruby on Rails that adds view helpers for
 [Bootstrap](http://twitter.github.io/bootstrap/).
 
 ## Installation
@@ -8,7 +8,7 @@ Bootstrap Rails Helpers is a plugin for Ruby on Rails that adds view helpers for
 Add it to your Gemfile:
 
 ```ruby
-gem "bootstrap-rails-helpers"
+gem "rails-bootstrap-helpers"
 ```
 
 Manually include the necessary stylesheets and JavaScript files from Bootstrap.
@@ -155,4 +155,4 @@ Run the tests using RSpec
 
 ## License
 
-Bootstrap Rails Helpers is licensed under [The MIT license](http://opensource.org/licenses/MIT)
+Rails Bootstrap Helpers is licensed under [The MIT license](http://opensource.org/licenses/MIT)

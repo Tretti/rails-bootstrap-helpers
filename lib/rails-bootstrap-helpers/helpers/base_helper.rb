@@ -1,4 +1,4 @@
-module BootstrapRailsHelpers::Helpers::BaseHelper
+module RailsBootstrapHelpers::Helpers::BaseHelper
   # Renders the given icon
   #
   # Renders an <tt>i</tt> tag with the class "icon-#{icon}"
@@ -27,6 +27,6 @@ module BootstrapRailsHelpers::Helpers::BaseHelper
   # ==== Options
   # @param :invert [Boolean] if the color of the icon should be inverted
   def icon (icon, options = {})
-    BootstrapRailsHelpers::Helpers::BaseHelper.icon(icon, options)
+    RailsBootstrapHelpers::Helpers::BaseHelper.icon(icon, options)
   end
 end

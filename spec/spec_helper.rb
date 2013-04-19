@@ -16,5 +16,5 @@ Spork.prefork do
 end
 
 Spork.each_run do
-  require "bootstrap-rails-helpers"
+  require "rails-bootstrap-helpers"
 end

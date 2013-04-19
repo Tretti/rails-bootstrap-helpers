@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe BootstrapRailsHelpers::Helpers::BaseHelper do
+describe RailsBootstrapHelpers::Helpers::BaseHelper do
   describe "icon" do
     it { should render_icon(:edit) }
     it { should render_icon("remove") }

@@ -1,4 +1,4 @@
-module BootstrapRailsHelpers::Renderers
+module RailsBootstrapHelpers::Renderers
   class ButtonRenderer < AbstractButtonRenderer
     def render
       append_class "btn"
@@ -20,9 +20,9 @@ module BootstrapRailsHelpers::Renderers
         icon_args = [icon, invert: has_option?("icon_invert")]
 
         if pos.to_s == "right"
-          self.text = self.text.to_s + " " + BootstrapRailsHelpers::Helpers::BaseHelper.icon(*icon_args)
+          self.text = self.text.to_s + " " + RailsBootstrapHelpers::Helpers::BaseHelper.icon(*icon_args)
         else
-          self.text = BootstrapRailsHelpers::Helpers::BaseHelper.icon(*icon_args) + " " + self.text.to_s
+          self.text = RailsBootstrapHelpers::Helpers::BaseHelper.icon(*icon_args) + " " + self.text.to_s
         end
 
         self.text = self.text.html_safe

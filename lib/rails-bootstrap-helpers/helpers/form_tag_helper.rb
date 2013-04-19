@@ -1,4 +1,4 @@
-module BootstrapRailsHelpers::Helpers::FormTagHelper
+module RailsBootstrapHelpers::Helpers::FormTagHelper
   # Renders a Bootstrap button tag. This method behaves just as
   # <tt>button_tag</tt> but will render a Bootstrap styled button tag instead.
   #
@@ -17,6 +17,6 @@ module BootstrapRailsHelpers::Helpers::FormTagHelper
   # @param :icon_invert [Boolean] if the color of the icon should be inverted
   def bs_button_tag (value, type, options = {})
     options = options.merge type: type
-    BootstrapRailsHelpers::Renderers::ButtonRenderer.new(self, :button, value, options).render
+    RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :button, value, options).render
   end
 end

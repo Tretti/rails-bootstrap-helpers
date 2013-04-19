@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :bootstrap-rails-helpers do
+# task :rails-bootstrap-helpers do
 #   # Task goes here
 # end

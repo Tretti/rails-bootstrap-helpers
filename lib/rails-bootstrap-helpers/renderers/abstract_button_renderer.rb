@@ -1,4 +1,4 @@
-module BootstrapRailsHelpers::Renderers
+module RailsBootstrapHelpers::Renderers
   class AbstractButtonRenderer < Renderer
     def initialize (template, type, *args, &block)
       super template

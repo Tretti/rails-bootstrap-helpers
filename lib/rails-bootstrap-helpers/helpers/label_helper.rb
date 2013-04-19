@@ -1,5 +1,5 @@
-module BootstrapRailsHelpers::Helpers::LabelHelper
-  include BootstrapRailsHelpers::Helpers::OptionsHelper
+module RailsBootstrapHelpers::Helpers::LabelHelper
+  include RailsBootstrapHelpers::Helpers::OptionsHelper
 
   # Renders a Bootstrap label.
   #

@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 
-module BootstrapRailsHelpers::Helpers::AlertHelper
+module RailsBootstrapHelpers::Helpers::AlertHelper
   # Renders a Bootstrap alert with the given text.
   #
   # @param text [String] the text to render in the alert

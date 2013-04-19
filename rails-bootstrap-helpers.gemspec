@@ -1,13 +1,13 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-require "bootstrap-rails-helpers/version"
+require "rails-bootstrap-helpers/version"
 
 Gem::Specification.new do |s|
-  s.name        = "bootstrap-rails-helpers"
-  s.version     = BootstrapRailsHelpers::VERSION
+  s.name        = "rails-bootstrap-helpers"
+  s.version     = RailsBootstrapHelpers::VERSION
   s.authors     = ["Jacob Carlborg"]
   s.email       = ["jacob.carlborg@tretti.se"]
-  s.homepage    = "https://github.com/Tretti/bootstrap-rails-helpers"
+  s.homepage    = "https://github.com/Tretti/rails-bootstrap-helpers"
   s.summary     = "A Rails plugin that contains helpers for Bootstrap"
   s.description = "A Rails plugin that contains helpers for Bootstrap"
 

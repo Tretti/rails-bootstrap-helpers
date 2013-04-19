@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe BootstrapRailsHelpers::Helpers::OptionsHelper do
+describe RailsBootstrapHelpers::Helpers::OptionsHelper do
   describe "bs_options" do
     context "recognized options" do
       it "should not override unrecognized options" do

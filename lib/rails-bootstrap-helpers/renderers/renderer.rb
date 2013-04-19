@@ -1,4 +1,4 @@
-module BootstrapRailsHelpers::Renderers
+module RailsBootstrapHelpers::Renderers
   class Renderer
     abstract :render
     attr_reader :template

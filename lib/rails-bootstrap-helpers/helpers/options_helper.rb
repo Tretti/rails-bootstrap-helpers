@@ -1,4 +1,4 @@
-module BootstrapRailsHelpers::Helpers::OptionsHelper
+module RailsBootstrapHelpers::Helpers::OptionsHelper
   # Handles general Bootstrap options available for all Bootstrap helpers.
   #
   # Any option not specify below are kept intact.

@@ -1,4 +1,4 @@
-module BootstrapRailsHelpers::Helpers::ButtonHelper
+module RailsBootstrapHelpers::Helpers::ButtonHelper
   # Renders a Bootstrap button. This method behaves just as "link_to" but will
   # render a Bootstrap button instead of a regular link. Note that this is still
   # an "a" tag and not an "input" tag. In addition to the options "link_to"
@@ -13,7 +13,7 @@ module BootstrapRailsHelpers::Helpers::ButtonHelper
   # @present :icon_invert [Boolean] if the color of the icon should be inverted
   #   or not
   def bs_button_to (*args, &block)
-    BootstrapRailsHelpers::Renderers::ButtonRenderer.new(self, :link, *args, &block).render
+    RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :link, *args, &block).render
   end
 
   # Renders an inline Bootstrap button. That is, a small button having only an
@@ -26,7 +26,7 @@ module BootstrapRailsHelpers::Helpers::ButtonHelper
   # @see #bs_button_to
   def bs_inline_button_to (url, icon, options = {})
     options = options.reverse_merge icon: icon, size: "mini"
-    BootstrapRailsHelpers::Renderers::ButtonRenderer.new(self, :link, nil, url, options).render
+    RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :link, nil, url, options).render
   end
 
   # Renders a Bootstrap button with a popover.

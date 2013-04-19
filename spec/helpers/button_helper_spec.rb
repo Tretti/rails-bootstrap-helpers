@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe BootstrapRailsHelpers::Helpers::ButtonHelper do
+describe RailsBootstrapHelpers::Helpers::ButtonHelper do
   describe "bs_button_to" do
     context "with url" do
       it { should render_bs_button_to("foo").to("bar") }
