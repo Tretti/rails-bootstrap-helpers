@@ -99,11 +99,13 @@ following code to your JavaScript file:
 
 ````javascript
 $("[data-toggle=popover]").popover(html: true)
+// The "html" option tells the plugin to not escape HTML. Useful when rendering
+// the popover content using a block.
 ```
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#buttons)
 
-### Forms <a id="forms"></a>
+### <a id="forms"></a>Forms
 
 #### <a id="bs_button_tag"></a> bs\_button\_tag
 
@@ -116,6 +118,32 @@ to be rendered on the button, the other is what type of button (the is the HTML
 attribute `type`). Accepts all the options as [bs\_button\_to](#bs_button_to) does.
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#buttons)
+
+### <a id="labels"></a>Labels
+
+#### <a id="bs_label"></a>bs\_label
+
+```erb
+<%= bs_label "foo" # standard label%>
+<%= bs_label "foo", style: "success" # styled label %>
+
+### <a id="tooltips"></a>Tooltips
+
+```erb
+<%= bs_label "foo", tooltip: "bar" %>
+```
+
+Basically any helper accepts the `:tooltip` option. This will add a Bootstrap
+tooltip to the rendered component.
+
+**Note:** this helper requires JavaScript to be manually initialized. Add the
+following code to your JavaScript file:
+
+````javascript
+$("[data-toggle=tooltip]").tooltip()
+```
+
+[Bootstrap documentation](http://twitter.github.io/bootstrap/components.html#labels-badges)
 
 ## Tests
 
