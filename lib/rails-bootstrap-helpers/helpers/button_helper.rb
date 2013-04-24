@@ -43,7 +43,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
     if block_given?
       bs_popover_button(name, capture(&block).gsub("\n", ""), content_or_options || {})
     else
-      placement = options.delete(:placement) || "bottom"
+      placement = options.delete(:position) || options.delete(:placement) || "bottom"
 
       options = options.reverse_merge :"data-content" => content_or_options,
         :"data-toggle" => "popover",

@@ -85,7 +85,7 @@ Bootstrap button. That is, a button with the an icon (no text) and the size
 
 ```erb
 <%= bs_popover_button "foo", "bar"
-<%= bs_popover_button "foo", "bar", placement: "right" %>
+<%= bs_popover_button "foo", "bar", position: "right" %>
 <%= bs_popover_button "foo" do %>
   <%= link_to "Google", "http://www.google.se" %>
 <% end %>
