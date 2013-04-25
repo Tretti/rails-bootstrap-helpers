@@ -57,10 +57,15 @@ module RailsBootstrapHelpers::Renderers
     def append_class (cls)
       return unless cls
 
-      if c = html_options[:class]
-        html_options[:class] << " " + cls.to_s
+      if c = html_options["class"]
+        html_options["class"] << " " + cls.to_s
       else
-        html_options[:class] = cls.to_s
+        if c = has_option?("class")
+          c << " " + cls.to_s
+          cls = c
+        end
+
+        html_options["class"] = cls.to_s
       end
     end
 

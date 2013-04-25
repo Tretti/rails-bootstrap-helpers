@@ -9,7 +9,7 @@ RSpec::Matchers.define :render_bs_button_to do |text|
 
   def cls
     @cls ||= begin
-      cls = "btn"
+      cls = extra_class.present? ? "#{extra_class} btn" : "btn"
       cls << " btn-#{options[:style]}" if style?
       cls << " btn-#{options[:size]}" if size?
       cls
@@ -76,6 +76,10 @@ RSpec::Matchers.define :render_bs_button_to do |text|
     @icon_position_set
   end
 
+  def extra_class
+    options[:class]
+  end
+
   chain :to do |url|
     @url = url
   end
@@ -102,7 +106,11 @@ RSpec::Matchers.define :render_bs_button_to do |text|
 
   chain :with_icon_position do |icon_position|
     options[:icon_position] = icon_position
-    @icon_position_Set = true
+    @icon_position_set = true
+  end
+
+  chain :with_class do |cls|
+    options[:class] = cls
   end
 
   match do

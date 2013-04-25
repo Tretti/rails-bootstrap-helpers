@@ -41,6 +41,10 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
       it { should render_bs_button_to("foo").with_icon_position(:left) }
       it { should render_bs_button_to("foo").with_icon_position(:right) }
     end
+
+    context "with custom class attribute" do
+      it { should render_bs_button_to("foo").with_class("bar") }
+    end
   end
 
   describe "bs_inline_button_to" do

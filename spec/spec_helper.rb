@@ -7,6 +7,7 @@ Spork.prefork do
 
   require "rspec/rails"
   require "rspec/autorun"
+  require "pry"
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
