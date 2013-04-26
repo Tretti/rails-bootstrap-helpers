@@ -84,7 +84,7 @@ Bootstrap button. That is, a button with the an icon (no text) and the size
 #### <a id="bs_popover_button"></a>bs\_popover\_button
 
 ```erb
-<%= bs_popover_button "foo", "bar"
+<%= bs_popover_button "foo", "bar" %>
 <%= bs_popover_button "foo", "bar", position: "right" %>
 <%= bs_popover_button "foo" do %>
   <%= link_to "Google", "http://www.google.se" %>
@@ -125,7 +125,7 @@ attribute `type`). Accepts all the options as [bs\_button\_to](#bs_button_to) do
 
 ```erb
 <%= bs_label "foo" # standard label%>
-<%= bs_label "foo", style: "success" # styled label %>
+<%= bs_label "foo", :success # styled label %>
 ```
 
 ### <a id="tooltips"></a>Tooltips
