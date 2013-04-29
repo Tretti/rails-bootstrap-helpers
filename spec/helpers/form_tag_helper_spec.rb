@@ -40,4 +40,26 @@ describe RailsBootstrapHelpers::Helpers::FormTagHelper do
       it { should render_bs_button_tag("foo", :submit).with_icon_position(:right) }
     end
   end
+
+  describe "bs_submit_tag" do
+    it { should render_bs_submit_tag("foo") }
+
+    context "with style" do
+      it { should render_bs_submit_tag("foo").with_style(:default) }
+      it { should render_bs_submit_tag("foo").with_style(:primary) }
+      it { should render_bs_submit_tag("foo").with_style(:info) }
+      it { should render_bs_submit_tag("foo").with_style(:success) }
+      it { should render_bs_submit_tag("foo").with_style(:warning) }
+      it { should render_bs_submit_tag("foo").with_style(:danger) }
+      it { should render_bs_submit_tag("foo").with_style(:inverse) }
+      it { should render_bs_submit_tag("foo").with_style(:link) }
+    end
+
+    context "with size" do
+      it { should render_bs_submit_tag("foo").with_size(:default) }
+      it { should render_bs_submit_tag("foo").with_size(:large) }
+      it { should render_bs_submit_tag("foo").with_size(:small) }
+      it { should render_bs_submit_tag("foo").with_size(:mini) }
+    end
+  end
 end

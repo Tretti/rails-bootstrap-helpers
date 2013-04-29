@@ -119,6 +119,14 @@ attribute `type`). Accepts all the options as [bs\_button\_to](#bs_button_to) do
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#buttons)
 
+#### <a id="bs_submit_tag"></a> bs\_submit\_tag
+
+```erb
+<%= bs_submit_tag "save" %>
+<%= bs_submit_tag "save", style: "primary" %>
+<%= bs_submit_tag "save", size: "small" %>
+```
+
 ### <a id="labels"></a>Labels
 
 #### <a id="bs_label"></a>bs\_label
