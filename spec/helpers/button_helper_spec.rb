@@ -95,12 +95,15 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
   describe "bs_collapsible_button" do
     let(:attributes) do
       {
-        href: '#',
         class: "btn",
         :"data-target" => "bar",
-        :"data-toggle" => "collapse"
+        :"data-toggle" => "collapse",
+        name: "button",
+        type: "button"
       }
     end
+
+    let(:html) { "<button #{html_attributes}>foo</button>" }
 
     it "should render a button with a collapsible" do
       helper.bs_collapsible_button("foo", "bar").should == html

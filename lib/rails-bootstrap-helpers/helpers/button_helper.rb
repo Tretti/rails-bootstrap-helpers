@@ -68,6 +68,6 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
     options = options.dup.reverse_merge :"data-toggle" => "collapse",
       :"data-target" => target
 
-    bs_button_to text, '#', options
+    bs_button_tag text, :button, options
   end
 end
