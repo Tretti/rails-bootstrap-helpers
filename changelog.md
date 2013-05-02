@@ -7,6 +7,7 @@
 * Add new form tag helper `bs_submit_tag`
 * Add new button `bs_collapsible_button`
 * Add new tag helper `bs_content_tag`
+* Add new helper `accordion`
 
 ### Bugs Fixed
 * "class" option not being passed through button helpers

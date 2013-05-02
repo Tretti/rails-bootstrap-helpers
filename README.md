@@ -202,6 +202,42 @@ The above code will return the following HTML code:
 Returns an HTML block. This method behaves basically just like `content_tag` but
 properly indents and add newlines to the HTML. This is useful in helpers.
 
+### <a id="accordion"></a>Accordion
+
+#### <a id="accordion_helper"></a>accordion
+
+```erb
+<%= accordion "unique_id" do |a| %>
+	<%= a.group "heading" do %>
+		content
+	<% end %>
+<% end %>
+```
+
+The above code will render the following HTML code:
+
+```html
+<div class="accordion" id="unique_id">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-parent="#unique_id.accordion" data-toggle="collapse" href="#unique_id.accordion .accordion-group:nth-child(0) .accordion-body.collapse">
+        heading
+      </a>
+    </div>
+
+    <div class="accordion-body collapse">
+      <div class="accordion-inner">
+        content
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+Renders a Bootstrap accordion/collapsible section.
+
+[Bootstrap documentation](http://twitter.github.io/bootstrap/javascript.html#collapse)
+
 ## Tests
 
 Run the tests using RSpec
