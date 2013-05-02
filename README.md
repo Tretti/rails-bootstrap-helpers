@@ -188,14 +188,14 @@ The above code will return the following HTML code:
 
 ```html
 <div>
-	foo
+  foo
 </div>
 
 <div id="foo">
-	<div class="asd">
-		bar
-	</div>
-	foobar
+  <div class="asd">
+    bar
+  </div>
+  foobar
 </div>
 ```
 
