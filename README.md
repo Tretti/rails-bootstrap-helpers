@@ -172,15 +172,15 @@ $("[data-toggle=tooltip]").tooltip()
 
 ```ruby
 bs_content_tag :div do
-	append "foo"
+  append "foo"
 end
 
 bs_content_tag :div, id: "foo" do
-	bs_content_tag :div, class: "asd" do
-		append "bar"
-	end
+  bs_content_tag :div, class: "asd" do
+    append "bar"
+  end
 
-	append "foobar"
+  append "foobar"
 end
 ```
 
@@ -208,9 +208,9 @@ properly indents and add newlines to the HTML. This is useful in helpers.
 
 ```erb
 <%= accordion "unique_id" do |a| %>
-	<%= a.group "heading" do %>
-		content
-	<% end %>
+  <%= a.group "heading" do %>
+    content
+  <% end %>
 <% end %>
 ```
 
