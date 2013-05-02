@@ -166,6 +166,42 @@ $("[data-toggle=tooltip]").tooltip()
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/components.html#labels-badges)
 
+### <a id="tags"></a>Tags
+
+#### <a id="bs_content_tag"></a>bs\_content\_tag
+
+```ruby
+bs_content_tag :div do
+	append "foo"
+end
+
+bs_content_tag :div, id: "foo" do
+	bs_content_tag :div, class: "asd" do
+		append "bar"
+	end
+
+	append "foobar"
+end
+```
+
+The above code will return the following HTML code:
+
+```html
+<div>
+	foo
+</div>
+
+<div id="foo">
+	<div class="asd">
+		bar
+	</div>
+	foobar
+</div>
+```
+
+Returns an HTML block. This method behaves basically just like `content_tag` but
+properly indents and add newlines to the HTML. This is useful in helpers.
+
 ## Tests
 
 Run the tests using RSpec

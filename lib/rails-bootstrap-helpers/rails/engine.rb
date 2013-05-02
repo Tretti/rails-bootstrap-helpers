@@ -1,5 +1,3 @@
-#require "action"
-
 module RailsBootstrapHelpers
   module Rails
     class Engine < ::Rails::Engine
@@ -9,6 +7,7 @@ module RailsBootstrapHelpers
         ActionView::Base.send :include, RailsBootstrapHelpers::Helpers::ButtonHelper
         ActionView::Base.send :include, RailsBootstrapHelpers::Helpers::FormTagHelper
         ActionView::Base.send :include, RailsBootstrapHelpers::Helpers::LabelHelper
+        ActionView::Base.send :include, RailsBootstrapHelpers::Helpers::TagHelper
       end
     end
   end
