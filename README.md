@@ -208,7 +208,7 @@ properly indents and add newlines to the HTML. This is useful in helpers.
 
 ```erb
 <%= accordion "unique_id" do |a| %>
-  <%= a.group "heading" do %>
+  <% a.group "heading" do %>
     content
   <% end %>
 <% end %>
