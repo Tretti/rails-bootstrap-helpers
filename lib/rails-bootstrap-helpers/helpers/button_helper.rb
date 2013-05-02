@@ -39,6 +39,8 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   #
   # ==== Options
   # @param :placement [String, "bottom", "top", "left", "right"]
+  #
+  # @see #bs_button_to
   def bs_popover_button (name, content_or_options = nil, options = {}, &block)
     if block_given?
       bs_popover_button(name, capture(&block).gsub("\n", ""), content_or_options || {})
@@ -51,5 +53,21 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
 
       bs_button_to(name, '#', options)
     end
+  end
+
+  # Renders a collapsible Bootstrap button. That is, a button when clicked opens
+  # a collapsible section.
+  #
+  # @param text [String] the text of the button
+  # @param target [String] a selector matching the
+  # @param options [Hash] a hash of options. All options are passed straight
+  #        through to the underlying bs_button_to method.
+  #
+  # @see #bs_button_to
+  def bs_collapsible_button (text, target, options = {})
+    options = options.dup.reverse_merge :"data-toggle" => "collapse",
+      :"data-target" => target
+
+    bs_button_to text, '#', options
   end
 end

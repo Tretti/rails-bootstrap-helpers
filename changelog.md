@@ -4,6 +4,8 @@
 
 ### New/Changed Features
 * Renamed option "placement" to "position" for `bs_popover_button`
+* Add new form tag helper `bs_submit_tag`
+* Add new button `bs_collapsible_button`
 
 ### Bugs Fixed
 * "class" option not being passed through button helpers

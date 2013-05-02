@@ -1,6 +1,12 @@
 require "spec_helper"
 
 describe RailsBootstrapHelpers::Helpers::ButtonHelper do
+  let(:html_attributes) do
+    attributes.map{ |k, v| "#{k}=\"#{v}\"" }.join(" ")
+  end
+
+  let(:html) { "<a #{html_attributes}>foo</a>" }
+
   describe "bs_button_to" do
     context "with url" do
       it { should render_bs_button_to("foo").to("bar") }
@@ -68,20 +74,12 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
       }
     end
 
-    let(:html_attributes) do
-      attributes.map{ |k, v| "#{k}=\"#{v}\"" }.join(" ")
-    end
-
     it "should render a button with a popover" do
-      html = "<a #{html_attributes}>foo</a>"
-
       helper.bs_popover_button("foo", "bar").should == html
     end
 
     context "render popover using block" do
       it "should render a button with a popover" do
-        html = "<a #{html_attributes}>foo</a>"
-
         helper.bs_popover_button("foo") { "bar" }.should == html
       end
     end
@@ -89,9 +87,29 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
     context "with custom placement" do
       it "should render a button with a popover" do
         attributes[:"data-placement"] = "top"
-        html = "<a #{html_attributes}>foo</a>"
-
         helper.bs_popover_button("foo", "bar", placement: "top").should == html
+      end
+    end
+  end
+
+  describe "bs_collapsible_button" do
+    let(:attributes) do
+      {
+        href: '#',
+        class: "btn",
+        :"data-target" => "bar",
+        :"data-toggle" => "collapse"
+      }
+    end
+
+    it "should render a button with a collapsible" do
+      helper.bs_collapsible_button("foo", "bar").should == html
+    end
+
+    context "with style" do
+      it "should render a collapsible button with the proper style" do
+        attributes[:class] = "btn btn-primary"
+        helper.bs_collapsible_button("foo", "bar", style: "primary").should == html
       end
     end
   end

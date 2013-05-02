@@ -105,6 +105,18 @@ $("[data-toggle=popover]").popover(html: true)
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#buttons)
 
+#### <a id="bs_collapsible_button"></a>bs\_collapsible\_button
+
+```erb
+<%= bs_collapsible_button "foo", "#bar" %>
+<%= bs_collapsible_button "foo", "#bar", style: "primary" %>
+
+<div id="bar">foobar</div>
+```
+
+Renders a Bootstrap button that when clicked will open a collapsible section.
+The second argument is a selector matching the section to open.
+
 ### <a id="forms"></a>Forms
 
 #### <a id="bs_button_tag"></a> bs\_button\_tag
