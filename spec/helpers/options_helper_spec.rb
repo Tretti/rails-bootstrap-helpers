@@ -44,4 +44,54 @@ describe RailsBootstrapHelpers::Helpers::OptionsHelper do
       end
     end
   end
+
+  describe "append_class!" do
+    it "should return the options hash" do
+      options = { class: "foo" }
+      helper.append_class!(options, "bar").should == options
+    end
+
+    context "with non existing class" do
+      let(:options) { { } }
+
+      it "should append the given class" do
+        helper.append_class!(options, "foo")
+        options[:class].should == "foo"
+      end
+
+      it "should add a new key, :class, to the options hash" do
+        helper.append_class!(options, "foo")
+        options.key?(:class).should be_true
+      end
+
+      context "when appending multiple classes" do
+        let(:classes) { %w[foo bar button small] }
+
+        it "should append all the given classes" do
+          helper.append_class!(options, *classes)
+          options[:class].should == classes.join(" ")
+        end
+      end
+    end
+
+    context "with existing class" do
+      it "should preserve the existing class and append the new" do
+        options = { class: "foo" }
+        helper.append_class!(options, "bar")
+        options[:class].should == "foo bar"
+      end
+
+      it "should handle 'class' as a key" do
+        options = { "class" => "foo" }
+        helper.append_class!(options, "bar")
+        options["class"].should == "foo bar"        
+      end
+
+      it "should handle :class as key" do
+        options = { class: "foo" }
+        helper.append_class!(options, "bar")
+        options[:class].should == "foo bar"        
+      end
+    end
+  end
 end

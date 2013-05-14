@@ -8,6 +8,7 @@
 * Add new button `bs_collapsible_button`
 * Add new tag helper `bs_content_tag`
 * Add new helper `accordion`
+* Add new options helper `append_class!`
 
 ### Bugs Fixed
 * "class" option not being passed through button helpers
