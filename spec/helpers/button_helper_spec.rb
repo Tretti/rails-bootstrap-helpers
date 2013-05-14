@@ -116,4 +116,34 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
       end
     end
   end
+
+  describe "button_group" do
+    it "should render a button group" do
+      content = helper.button_group do
+        "asd"
+      end
+
+      content.should == '<div class="btn-group">asd</div>'
+    end
+
+    context "vertical button group" do
+      it "should render a vertical button group" do
+        content = helper.button_group vertical: true do
+          "asd"
+        end
+
+        content.should == '<div class="btn-group btn-group-vertical">asd</div>'
+      end
+    end
+
+    context "toolbar button group" do
+      it "should render a toolbar button group" do
+        content = helper.button_group toolbar: true do
+          "asd"
+        end
+
+        content.should == '<div class="btn-toolbar">asd</div>'
+      end
+    end
+  end
 end

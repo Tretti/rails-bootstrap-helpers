@@ -117,6 +117,36 @@ $("[data-toggle=popover]").popover(html: true)
 Renders a Bootstrap button that when clicked will open a collapsible section.
 The second argument is a selector matching the section to open.
 
+#### <a id="button_group"></a>button\_group
+
+```erb
+<%= button_group do %>
+  <%= bs_button_to "google", "http://www.google.se" %>
+  <%= bs_button_to "google", "http://www.google.se", style: "success" %>
+<% end %>
+
+<%= button_group vertical: true do %>
+  <%= bs_button_to "google", "http://www.google.se" %>
+  <%= bs_button_to "google", "http://www.google.se", style: "success" %>
+<% end %>
+
+<%= button_group toolbar: true do %>
+  <%= button_group do %>
+    <%= bs_button_to "google", "http://www.google.se" %>
+    <%= bs_button_to "google", "http://www.google.se", style: "success" %>
+  <% end %>
+
+  <%= button_group do %>
+    <%= bs_button_to "google", "http://www.google.se", disabled: true %>
+    <%= bs_button_to "google", "http://www.google.se", icon: "edit" %>
+  <% end %>
+<%= end %>
+```
+
+Renders a Bootstrap button group. That is, a div tag with the `btn-group` class.
+
+[Bootstrap documentation](http://twitter.github.io/bootstrap/components.html#buttonGroups)
+
 ### <a id="forms"></a>Forms
 
 #### <a id="bs_button_tag"></a> bs\_button\_tag

@@ -70,4 +70,25 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
 
     bs_button_tag text, :button, options
   end
+
+  # Returns a button group. That is, a div tag with the "btn-group" class.
+  #
+  # @param options [Hash] a hash of options.
+  #
+  # ==== Options
+  # @param :vertical [Boolean] if true, appends the "btn-group-vertical" class
+  # @param :toolbar [Boolean] if true, wraps the group in an another group with
+  #        the "btn-toolbar" class
+  #
+  # All other options are passed to the button group div.
+  def button_group (options = {}, &block)
+    if toolbar = options.delete(:toolbar)
+      append_class!(options, "btn-toolbar")
+    else
+      append_class!(options, "btn-group")
+      append_class!(options, "btn-group-vertical") if options.delete(:vertical)
+    end
+
+    content_tag(:div, options, &block)
+  end
 end

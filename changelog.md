@@ -9,6 +9,7 @@
 * Add new tag helper `bs_content_tag`
 * Add new helper `accordion`
 * Add new options helper `append_class!`
+* Add new button helper `button_group`
 
 ### Bugs Fixed
 * "class" option not being passed through button helpers
