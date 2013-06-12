@@ -13,12 +13,21 @@ RSpec::Matchers.define :render_icon do |icon|
     cls
   end
 
+  def cls
+    @cls ||= begin
+      base_class = "icon-#{icon}"
+      cls = extra_class.present? ? extra_class + " " + base_class : base_class
+      cls << " icon-white" if invert?
+      cls
+    end
+  end
+
   def expected
     @render_icon_expected ||= "<i class=\"#{cls}\"></i>"
   end
 
   def got
-    @got ||= helper.icon(icon, invert: options[:invert])
+    @got ||= helper.icon(icon, invert: options[:invert], class: options[:class])
   end
 
   def failure_message (is_not)
@@ -30,9 +39,17 @@ RSpec::Matchers.define :render_icon do |icon|
     @invert_set
   end
 
+  def extra_class
+    options[:class]
+  end
+
   chain :inverted do |invert|
     options[:invert] = invert
     @invert_set = true
+  end
+
+  chain :with_class do |cls|
+    options[:class] = cls
   end
 
   match do

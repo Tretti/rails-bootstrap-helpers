@@ -1,4 +1,6 @@
 module RailsBootstrapHelpers::Helpers::BaseHelper
+  include RailsBootstrapHelpers::Helpers::OptionsHelper
+
   # Renders the given icon
   #
   # Renders an <tt>i</tt> tag with the class "icon-#{icon}"
@@ -8,14 +10,7 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
   # ==== Options
   # @param :invert [Boolean] if the color of the icon should be inverted
   def self.icon (icon, options = {})
-    icon = ERB::Util.html_escape(icon.to_s)
-    cls = "icon-" + icon
 
-    if invert = options.delete(:invert)
-      cls << " icon-white"
-    end
-
-    "<i class=\"#{cls}\"></i>".html_safe
   end
 
   # Renders the given icon
@@ -27,6 +22,18 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
   # ==== Options
   # @param :invert [Boolean] if the color of the icon should be inverted
   def icon (icon, options = {})
-    RailsBootstrapHelpers::Helpers::BaseHelper.icon(icon, options)
+    #RailsBootstrapHelpers::Helpers::BaseHelper.icon(icon, options)
+    options = options.dup
+
+    icon = ERB::Util.html_escape(icon.to_s)
+    append_class!(options, "icon-" + icon)
+
+    if options.delete(:invert)
+      append_class!(options, "icon-white")
+    end
+
+    cls = options[:class]
+
+    "<i class=\"#{cls}\"></i>".html_safe
   end
 end

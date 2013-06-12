@@ -13,6 +13,7 @@
 
 ### Bugs Fixed
 * "class" option not being passed through button helpers
+* "class" option not being passed through icon helper
 
 ## Version 0.0.1
 ### New/Changed Features

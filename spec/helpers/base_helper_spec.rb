@@ -14,5 +14,11 @@ describe RailsBootstrapHelpers::Helpers::BaseHelper do
       it { should render_icon(:foo) }
       it { should render_icon("bar") }
     end
+
+    context "with class" do
+      it { should render_icon(:edit).with_class("bar") }
+      it { should render_icon("remove").with_class("bar") }
+      it { should render_icon(:edit).inverted(true).with_class("bar") }
+    end
   end
 end

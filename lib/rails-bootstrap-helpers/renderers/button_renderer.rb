@@ -20,9 +20,9 @@ module RailsBootstrapHelpers::Renderers
         icon_args = [icon, invert: has_option?("icon_invert")]
 
         if pos.to_s == "right"
-          self.text = self.text.to_s + " " + RailsBootstrapHelpers::Helpers::BaseHelper.icon(*icon_args)
+          self.text = self.text.to_s + " " + icon(*icon_args)
         else
-          self.text = RailsBootstrapHelpers::Helpers::BaseHelper.icon(*icon_args) + " " + self.text.to_s
+          self.text = icon(*icon_args) + " " + self.text.to_s
         end
 
         self.text = self.text.html_safe
