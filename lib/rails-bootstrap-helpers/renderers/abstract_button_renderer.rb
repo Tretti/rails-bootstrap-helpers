@@ -73,8 +73,14 @@ module RailsBootstrapHelpers::Renderers
 
     def extract_options!
       self.options = args[1]
-      self.options = options.stringify_keys if options.is_a?(Hash)
+
+      if options.is_a?(Hash)
+        self.options = bs_options(options)
+        self.options = options.stringify_keys
+      end
+
       self.html_options = args[2] || {}
+      self.html_options = bs_options(html_options)
       self.html_options = html_options.stringify_keys
     end
 

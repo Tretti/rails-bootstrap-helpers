@@ -10,6 +10,7 @@
 * Add new helper `accordion`
 * Add new options helper `append_class!`
 * Add new button helper `button_group`
+* Add support for tooltips to button helpers
 
 ### Bugs Fixed
 * "class" option not being passed through button helpers

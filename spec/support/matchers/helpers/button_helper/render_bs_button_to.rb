@@ -35,8 +35,23 @@ RSpec::Matchers.define :render_bs_button_to do |text|
     end
   end
 
+  def html_attributes
+    attrs = { href: url, class: cls }
+
+    if tooltip?
+      if tooltip_position?
+        attrs[:"data-placement"] = options[:tooltip_position]
+      end
+
+      attrs[:"data-toggle"] = "tooltip"
+      attrs[:title] = options[:tooltip]
+    end
+
+    attrs.map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
+  end
+
   def expected
-    @render_button_expected ||= "<a href=\"#{url}\" class=\"#{cls}\">#{text_with_icon}</a>"
+    @render_button_expected ||= "<a #{html_attributes}>#{text_with_icon}</a>"
   end
 
   def got
@@ -76,6 +91,14 @@ RSpec::Matchers.define :render_bs_button_to do |text|
     @icon_position_set
   end
 
+  def tooltip?
+    options.key?(:tooltip)
+  end
+
+  def tooltip_position?
+    options.key?(:tooltip_position)
+  end
+
   def extra_class
     options[:class]
   end
@@ -113,6 +136,14 @@ RSpec::Matchers.define :render_bs_button_to do |text|
     options[:class] = cls
   end
 
+  chain :with_tooltip do |tooltip|
+    options[:tooltip] = tooltip
+  end
+
+  chain :with_tooltip_position do |tooltip_position|
+    options[:tooltip_position] = tooltip_position
+  end
+
   match do
     @text = text
     expected == got
@@ -136,6 +167,8 @@ RSpec::Matchers.define :render_bs_button_to do |text|
 
     descs << "with the #{ext}icon: #{options[:icon]}" if icon?
     descs << "with the icon_position: #{options[:icon_position]}" if icon_position?
+    descs << "with the '#{options[:tooltip]}' tooltip" if tooltip?
+    descs << "with the '#{options[:tooltip_position]}' tooltip position" if tooltip_position?
 
     desc << " " if descs.any?
     desc << descs.to_sentence

@@ -39,6 +39,11 @@ describe RailsBootstrapHelpers::Helpers::FormTagHelper do
       it { should render_bs_button_tag("foo", :submit).with_icon_position(:left) }
       it { should render_bs_button_tag("foo", :submit).with_icon_position(:right) }
     end
+
+    context "with tooltip" do
+      it { should render_bs_button_tag("foo", :submit).with_tooltip("asd") }
+      it { should render_bs_button_tag("foo", :submit).with_tooltip("asd").with_tooltip_position(:left) }
+    end
   end
 
   describe "bs_submit_tag" do

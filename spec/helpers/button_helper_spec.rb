@@ -51,6 +51,11 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
     context "with custom class attribute" do
       it { should render_bs_button_to("foo").with_class("bar") }
     end
+
+    context "with tooltip" do
+      it { should render_bs_button_to("foo").with_tooltip("asd") }
+      it { should render_bs_button_to("foo").with_tooltip("asd").with_tooltip_position(:left) }
+    end
   end
 
   describe "bs_inline_button_to" do
