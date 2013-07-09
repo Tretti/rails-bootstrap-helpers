@@ -39,6 +39,7 @@ module RailsBootstrapHelpers::Renderers
         foobar = self
         content_tag(:div, class: base) do
           body = "accordion-body"
+          random_id = body.object_id
           build_heading(group.heading, body, count, accordion_base, group_base, random_id) +
           build_body(body, group.block, random_id)
         end
