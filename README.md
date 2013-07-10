@@ -44,6 +44,29 @@ For which JavaScript file to include, follow the
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#icons)
 
+#### <a id="iconic_icon"></a>iconic\_icon
+
+```erb
+<%= iconic_icon :check %> # renders an icon with the iconic-check icon
+
+<%= iconic_icon :edit, color: :blue %> # render an icon with an CSS color
+<%= iconic_icon :edit, color: "#fff" %> # render an icon with an CSS color
+
+<%= iconic_icon :edit, size: 10 %> # render an icon with an CSS font size
+<%= iconic_icon :edit, size: "10" %> # render an icon with an CSS font size
+<%= iconic_icon :edit, size: "10em" %> # render an icon with an CSS font size
+
+<%= iconic_icon :edit, bs_style: "muted" %> # render an Bootstrap style
+<%= iconic_icon :edit, bs_style: "success" %> # render an Bootstrap style
+
+<%= iconic_icon :edit, action_style: "default" %> # render an Jasny Bootstrap action link style
+<%= iconic_icon :edit, action_style: "success" %> # render an Jasny Bootstrap action link style
+```
+
+Renders an icon using the Jasny Bootstrap Iconic icon set.
+
+[Jasny Bootstrap documentation](http://jasny.github.io/bootstrap/base-css.html#iconic)
+
 ### <a id="alerts"></a>Alerts
 
 #### <a id="bs_alert"></a>bs\_alert

@@ -7,6 +7,7 @@ module RailsBootstrapHelpers
     autoload :ActionLinkRenderer, "rails-bootstrap-helpers/renderers/action_link_renderer"
     autoload :ButtonRenderer, "rails-bootstrap-helpers/renderers/button_renderer"
     autoload :ContentTagRenderer, "rails-bootstrap-helpers/renderers/content_tag_renderer"
+    autoload :IconicIconRenderer, "rails-bootstrap-helpers/renderers/iconic_icon_renderer"
     autoload :Renderer, "rails-bootstrap-helpers/renderers/renderer"
   end
 
