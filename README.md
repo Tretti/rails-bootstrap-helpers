@@ -1,7 +1,8 @@
 # Rails Bootstrap Helpers
 
 Rails Bootstrap Helpers is a plugin for Ruby on Rails that adds view helpers for
-[Bootstrap](http://twitter.github.io/bootstrap/).
+[Bootstrap](http://twitter.github.io/bootstrap/). It also contains some helpers
+for [Jasny's Bootstrap extensions](http://jasny.github.io/bootstrap/index.html).
 
 ## Installation
 
@@ -15,8 +16,8 @@ Manually include the necessary stylesheets and JavaScript files from Bootstrap.
 
 Although it has no direct dependencies on other gems than Rails, it is necessary
 to include Bootstrap in some way or another to make this gem useful.
-[bootstrap-sass](https://github.com/thomas-mcdonald/bootstrap-sass) is
-recommended.
+For standard Bootstrap, [bootstrap-sass](https://github.com/thomas-mcdonald/bootstrap-sass) is
+recommended. For Jasny Bootstrap, [jasny-bootstrap-extension-rails](https://github.com/mdedetrich/jasny-bootstrap-extension-rails) is recommended.
 
 ### JavaScript
 
@@ -267,6 +268,22 @@ The above code will render the following HTML code:
 Renders a Bootstrap accordion/collapsible section.
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/javascript.html#collapse)
+
+### <a id="accordion"></a>Action Links
+
+#### <a id="action_link_to"></a>action\_link\_to
+
+```erb
+<%= action_link_to "google", "http://www.google.se" %>
+<%= action_link_to "google", "http://www.google.se", style: "default" %>
+<%= action_link_to "google", "http://www.google.se", style: "primary" %>
+```
+
+Renders an action link from Jasny's Bootstrap extensions. It's basically a
+wrapper around the `link_to` helper. In addition all the standard arguments and
+options that `link_to` accepts it also accepts the above options.
+
+[Jasny Bootstrap documentation](http://jasny.github.io/bootstrap/base-css.html#action-links)
 
 ## Tests
 

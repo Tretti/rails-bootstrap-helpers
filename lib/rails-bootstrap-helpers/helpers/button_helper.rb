@@ -38,7 +38,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   # @param block [block] a block rendering the content of the popover
   #
   # ==== Options
-  # @param :placement [String, "bottom", "top", "left", "right"]
+  # @param :position [String, "bottom", "top", "left", "right"]
   #
   # @see #bs_button_to
   def bs_popover_button (name, content_or_options = nil, options = {}, &block)
