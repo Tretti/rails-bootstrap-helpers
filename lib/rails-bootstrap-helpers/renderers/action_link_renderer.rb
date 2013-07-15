@@ -1,5 +1,5 @@
 module RailsBootstrapHelpers::Renderers
-  class ActionLinkRenderer < AbstractButtonRenderer
+  class ActionLinkRenderer < AbstractLinkRenderer
     def initialize (template, *args, &block)
       super template, :link, *args, &block
     end

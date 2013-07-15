@@ -1,5 +1,5 @@
 module RailsBootstrapHelpers::Renderers
-  class ButtonRenderer < AbstractButtonRenderer
+  class ButtonRenderer < AbstractLinkRenderer
     def render
       append_class "btn"
 

@@ -2,7 +2,7 @@ require "rails-bootstrap-helpers/core_ext/abstract"
 
 module RailsBootstrapHelpers
   module Renderers
-    autoload :AbstractButtonRenderer, "rails-bootstrap-helpers/renderers/abstract_button_renderer"
+    autoload :AbstractLinkRenderer, "rails-bootstrap-helpers/renderers/abstract_link_renderer"
     autoload :AccordionRenderer, "rails-bootstrap-helpers/renderers/accordion_renderer"
     autoload :ActionLinkRenderer, "rails-bootstrap-helpers/renderers/action_link_renderer"
     autoload :ButtonRenderer, "rails-bootstrap-helpers/renderers/button_renderer"
