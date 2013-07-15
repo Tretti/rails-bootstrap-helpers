@@ -13,7 +13,7 @@ module RailsBootstrapHelpers
 
   module Helpers
     autoload :AccordionHelper, "rails-bootstrap-helpers/helpers/accordion_helper"
-    autoload :ActionLinkHelper, "rails-bootstrap-helpers/helpers/action_link_helper"
+    autoload :UrlHelper, "rails-bootstrap-helpers/helpers/url_helper"
     autoload :AlertHelper, "rails-bootstrap-helpers/helpers/alert_helper"
     autoload :BaseHelper, "rails-bootstrap-helpers/helpers/base_helper"
     autoload :ButtonHelper, "rails-bootstrap-helpers/helpers/button_helper"
