@@ -21,4 +21,13 @@ describe RailsBootstrapHelpers::Helpers::UrlHelper do
       it { should render_action_link_to("foo").with_tooltip("asd").with_tooltip_position(:left) }
     end
   end
+
+  describe "row_link_to" do
+    it { should render_row_link_to("foo").to("bar") }
+
+    context "with tooltip" do
+      it { should render_row_link_to("foo").with_tooltip("asd") }
+      it { should render_row_link_to("foo").with_tooltip("asd").with_tooltip_position(:left) }      
+    end
+  end
 end

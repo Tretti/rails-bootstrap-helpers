@@ -9,4 +9,10 @@ module RailsBootstrapHelpers::Helpers::UrlHelper
   def action_link_to (*args, &block)
     RailsBootstrapHelpers::Renderers::ActionLinkRenderer.new(self, *args, &block).render
   end
+
+  # Renders a Jasny Bootstrap row link. This method behaves just as "link_to"
+  # but will render a Jasny Bootstrap row link instead of a regular link.
+  def row_link_to (*args, &block)
+    RailsBootstrapHelpers::Renderers::RowLinkRenderer.new(self, *args, &block).render
+  end
 end

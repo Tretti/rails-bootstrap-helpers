@@ -292,7 +292,7 @@ Renders a Bootstrap accordion/collapsible section.
 
 [Bootstrap documentation](http://twitter.github.io/bootstrap/javascript.html#collapse)
 
-### <a id="accordion"></a>Action Links
+### <a id="accordion"></a>Url Helpers
 
 #### <a id="action_link_to"></a>action\_link\_to
 
@@ -307,6 +307,17 @@ wrapper around the `link_to` helper. In addition all the standard arguments and
 options that `link_to` accepts it also accepts the above options.
 
 [Jasny Bootstrap documentation](http://jasny.github.io/bootstrap/base-css.html#action-links)
+
+#### <a id="action_link_to"></a>row\_link\_to
+
+```erb
+<%= row_link_to "google", "http://www.google.se" %>
+```
+
+Renders a row link from Jasny's Bootstrap extensions. It's basically a
+wrapper around the `link_to` helper.
+
+[Jasny Bootstrap documentation](http://jasny.github.io/bootstrap/javascript.html#rowlink)
 
 ## Tests
 

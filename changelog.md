@@ -13,6 +13,7 @@
 * Add support for tooltips to button helpers
 * Add new helper `action_link_to`
 * Add new helper `iconic_icon`
+* Add new helper `row_link_to`
 
 ### Bugs Fixed
 * "class" option not being passed through button helpers

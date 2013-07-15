@@ -9,6 +9,7 @@ module RailsBootstrapHelpers
     autoload :ContentTagRenderer, "rails-bootstrap-helpers/renderers/content_tag_renderer"
     autoload :IconicIconRenderer, "rails-bootstrap-helpers/renderers/iconic_icon_renderer"
     autoload :Renderer, "rails-bootstrap-helpers/renderers/renderer"
+    autoload :RowLinkRenderer, "rails-bootstrap-helpers/renderers/row_link_renderer"
   end
 
   module Helpers
