@@ -121,7 +121,7 @@ popover can either be supplied as the second argument or as a block.
 **Note:** this helper requires JavaScript to be manually initialized. Add the
 following code to your JavaScript file:
 
-````javascript
+```javascript
 $("[data-toggle=popover]").popover(html: true)
 // The "html" option tells the plugin to not escape HTML. Useful when rendering
 // the popover content using a block.
@@ -214,7 +214,7 @@ tooltip to the rendered component.
 **Note:** this option requires JavaScript to be manually initialized. Add the
 following code to your JavaScript file:
 
-````javascript
+```javascript
 $("[data-toggle=tooltip]").tooltip()
 ```
 
@@ -318,6 +318,78 @@ Renders a row link from Jasny's Bootstrap extensions. It's basically a
 wrapper around the `link_to` helper.
 
 [Jasny Bootstrap documentation](http://jasny.github.io/bootstrap/javascript.html#rowlink)
+
+### <a id="navigation"></a>Navigation
+
+#### <a id="tabbable"></a>tabbable
+
+Renders a tabbable navigation.
+
+```erb
+<%= tabbable do |bar| %>
+  = bar.tab "foo"
+  = bar.tab "bar"
+
+  <%= bar.tab_pane do %>
+    Foo pane
+  <% end %>
+
+  <%= bar.tab_pane do %>
+    Bar pane
+  <% end %>
+<% end >
+```
+
+The above code will render the following HTML:
+
+```html
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li><a href="#tab_pane_0_2156227680">foo</a></li>
+    <li><a href="#tab_pane_1_2156227620">bar</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="tab_pane_0_2156227680">
+      foo content
+    </div>
+
+    <div id="tab_pane_1_2156227620">
+      bar content
+    </div>
+  </div>
+</div>
+```
+
+Alternatively the tabs can be passed directly to the `tabbable` method:
+
+```erb
+<%= tabbable "foo", "bar" do |bar| %>
+  <%= bar.tab_pane do %>
+    Foo pane
+  <% end %>
+
+  <%= bar.tab_pane do %>
+    Bar pane
+  <% end %>
+<% end >
+```
+
+If the number of tabs and tab panes don't match an error will be raised.
+
+```erb
+<%= tabbable "foo", bordered: true do |bar| %>
+  <%= bar.tab_pane do %>
+    Foo pane
+  <% end %>
+<% end >
+```
+
+The above option will render the tabbable container with a border. Requires
+the Jasny Bootstrap extensions.
+
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/components.html#navs)
+[Jasny Bootstrap documentation](http://jasny.github.io/bootstrap/components.html#navs)
 
 ## Tests
 

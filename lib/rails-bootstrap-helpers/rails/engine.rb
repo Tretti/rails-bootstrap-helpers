@@ -10,6 +10,7 @@ module RailsBootstrapHelpers
         ActionView::Base.send :include, RailsBootstrapHelpers::Helpers::FormTagHelper
         ActionView::Base.send :include, RailsBootstrapHelpers::Helpers::LabelHelper
         ActionView::Base.send :include, RailsBootstrapHelpers::Helpers::TagHelper
+        ActionView::Base.send :include, RailsBootstrapHelpers::Helpers::NavigationHelper
       end
     end
   end

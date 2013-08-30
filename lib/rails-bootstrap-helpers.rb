@@ -10,6 +10,7 @@ module RailsBootstrapHelpers
     autoload :IconicIconRenderer, "rails-bootstrap-helpers/renderers/iconic_icon_renderer"
     autoload :Renderer, "rails-bootstrap-helpers/renderers/renderer"
     autoload :RowLinkRenderer, "rails-bootstrap-helpers/renderers/row_link_renderer"
+    autoload :TabbableRenderer, "rails-bootstrap-helpers/renderers/tabbable_renderer"
   end
 
   module Helpers
@@ -22,6 +23,7 @@ module RailsBootstrapHelpers
     autoload :LabelHelper, "rails-bootstrap-helpers/helpers/label_helper"
     autoload :OptionsHelper, "rails-bootstrap-helpers/helpers/options_helper"
     autoload :TagHelper, "rails-bootstrap-helpers/helpers/tag_helper"
+    autoload :NavigationHelper, "rails-bootstrap-helpers/helpers/navigation_helper"
   end
 end
 
