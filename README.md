@@ -1,7 +1,7 @@
 # Rails Bootstrap Helpers
 
 Rails Bootstrap Helpers is a plugin for Ruby on Rails that adds view helpers for
-[Bootstrap](http://twitter.github.io/bootstrap/). It also contains some helpers
+[Bootstrap](http://getbootstrap.com/2.3.2/). It also contains some helpers
 for [Jasny's Bootstrap extensions](http://jasny.github.io/bootstrap/index.html).
 
 ## Installation
@@ -29,7 +29,7 @@ uses JavaScript that needs manually initialization:
 * [bs\_popover\_button](#bs_popover_button)
 
 For which JavaScript file to include, follow the
-[Bootstrap documentation](http://twitter.github.io/bootstrap/javascript.html).
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/javascript.html).
 
 ## Usage
 
@@ -42,7 +42,7 @@ For which JavaScript file to include, follow the
 <%= icon :edit, invert: true %> # inverts the color of the icon, making it white
 ```
 
-[Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#icons)
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/base-css.html#icons)
 
 #### <a id="iconic_icon"></a>iconic\_icon
 
@@ -76,7 +76,7 @@ Renders an icon using the Jasny Bootstrap Iconic icon set.
 <%= bs_alert "foo", dismiss_button: true %> # alert box with a dismiss button
 ```
 
-[Bootstrap documentation](http://twitter.github.io/bootstrap/components.html#alerts)
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/components.html#alerts)
 
 ### <a id="buttons"></a>Buttons
 
@@ -127,7 +127,7 @@ $("[data-toggle=popover]").popover(html: true)
 // the popover content using a block.
 ```
 
-[Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#buttons)
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/base-css.html#buttons)
 
 #### <a id="bs_collapsible_button"></a>bs\_collapsible\_button
 
@@ -169,7 +169,7 @@ The second argument is a selector matching the section to open.
 
 Renders a Bootstrap button group. That is, a div tag with the `btn-group` class.
 
-[Bootstrap documentation](http://twitter.github.io/bootstrap/components.html#buttonGroups)
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/components.html#buttonGroups)
 
 ### <a id="forms"></a>Forms
 
@@ -183,7 +183,7 @@ Renders an `button` tag styled as a Bootstrap button. First argument is the text
 to be rendered on the button, the other is what type of button (that is, the HTML
 attribute `type`). Accepts all the options as [bs\_button\_to](#bs_button_to) does.
 
-[Bootstrap documentation](http://twitter.github.io/bootstrap/base-css.html#buttons)
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/base-css.html#buttons)
 
 #### <a id="bs_submit_tag"></a> bs\_submit\_tag
 
@@ -218,7 +218,7 @@ following code to your JavaScript file:
 $("[data-toggle=tooltip]").tooltip()
 ```
 
-[Bootstrap documentation](http://twitter.github.io/bootstrap/components.html#labels-badges)
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/components.html#labels-badges)
 
 ### <a id="tags"></a>Tags
 
@@ -290,7 +290,7 @@ The above code will render the following HTML code:
 
 Renders a Bootstrap accordion/collapsible section.
 
-[Bootstrap documentation](http://twitter.github.io/bootstrap/javascript.html#collapse)
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/javascript.html#collapse)
 
 ### <a id="accordion"></a>Url Helpers
 
