@@ -323,18 +323,21 @@ wrapper around the `link_to` helper.
 
 #### <a id="tabbable"></a>tabbable
 
-Renders a tabbable navigation.
+Renders a tabbable navigation. By default the first tab will be active. This is
+possible to override by passing `active: true` or `active: false` to any tab
+or tab pane. If `active: false` is specified to any tab or tab pane the first
+tab or tab pane will _not_ get the class "active".
 
 ```erb
 <%= tabbable do |bar| %>
-  = bar.tab "foo"
-  = bar.tab "bar"
+  <% bar.tab "foo" %>
+  <% bar.tab "bar" %>
 
-  <%= bar.tab_pane do %>
+  <% bar.tab_pane do %>
     Foo pane
   <% end %>
 
-  <%= bar.tab_pane do %>
+  <% bar.tab_pane do %>
     Bar pane
   <% end %>
 <% end >
@@ -345,12 +348,12 @@ The above code will render the following HTML:
 ```html
 <div class="tabbable">
   <ul class="nav nav-tabs">
-    <li><a href="#tab_pane_0_2156227680">foo</a></li>
-    <li><a href="#tab_pane_1_2156227620">bar</a></li>
+    <li class="active"><a href="#tab_pane_0_2156227680" data-toggle="tab">foo</a></li>
+    <li><a href="#tab_pane_1_2156227620" data-toggle="tab">bar</a></li>
   </ul>
 
   <div class="tab-content">
-    <div id="tab_pane_0_2156227680">
+    <div class="active" id="tab_pane_0_2156227680">
       foo content
     </div>
 
@@ -365,11 +368,11 @@ Alternatively the tabs can be passed directly to the `tabbable` method:
 
 ```erb
 <%= tabbable "foo", "bar" do |bar| %>
-  <%= bar.tab_pane do %>
+  <% bar.tab_pane do %>
     Foo pane
   <% end %>
 
-  <%= bar.tab_pane do %>
+  <% bar.tab_pane do %>
     Bar pane
   <% end %>
 <% end >
@@ -378,8 +381,37 @@ Alternatively the tabs can be passed directly to the `tabbable` method:
 If the number of tabs and tab panes don't match an error will be raised.
 
 ```erb
+<%= tabbable "foo", fade: true do |bar| %>
+  <% bar.tab_pane do %>
+    Foo pane
+  <% end %>
+<% end >
+```
+
+The above option will add the "fade in" class to each tab pane. Requires the
+bootstrap-transition.js file to work.
+
+```erb
+<%= tabbable do |bar| %>
+  <% bar.tab "foo" %>
+  <% bar.tab "bar", active: true %>
+
+  <% bar.tab_pane do %>
+    Foo pane
+  <% end %>
+
+  <% bar.tab_pane active: true do %>
+    Bar pane
+  <% end %>
+<% end >
+```
+
+The above will add the class "active" only to the tabs and tab panes with the
+option `active: true`.
+
+```erb
 <%= tabbable "foo", bordered: true do |bar| %>
-  <%= bar.tab_pane do %>
+  <% bar.tab_pane do %>
     Foo pane
   <% end %>
 <% end >

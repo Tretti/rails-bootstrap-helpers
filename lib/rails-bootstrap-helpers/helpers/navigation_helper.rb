@@ -7,6 +7,9 @@ module RailsBootstrapHelpers::Helpers::NavigationHelper
   # ==== Options
   # @param :bordered [Boolean] if true, will render the tab container with a
   #        border. This option requires the Jasny Bootstrap extensions.
+  #
+  # @param :fade [Bootstrap] if true, will add the "fade in" class to all
+  #        tab panes. This requires the bootstrap-transition.js file.
   def tabbable (*args, &block)
     RailsBootstrapHelpers::Renderers::TabbableRenderer.new(self, *args, &block).render
   end
