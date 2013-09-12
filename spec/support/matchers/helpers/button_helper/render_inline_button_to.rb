@@ -4,7 +4,7 @@ RSpec::Matchers.define :render_inline_button_to do |url, icon|
   end
 
   def cls
-    @cls ||= "btn btn-#{options[:size]}"
+    @cls ||= "inline btn btn-#{options[:size]}"
   end
 
   def text_with_icon

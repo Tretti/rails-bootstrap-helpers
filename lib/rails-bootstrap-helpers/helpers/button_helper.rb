@@ -26,6 +26,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   # @see #bs_button_to
   def bs_inline_button_to (url, icon, options = {})
     options = options.reverse_merge icon: icon, size: "mini"
+    append_class!(options, "inline")
     RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :link, nil, url, options).render
   end
 
