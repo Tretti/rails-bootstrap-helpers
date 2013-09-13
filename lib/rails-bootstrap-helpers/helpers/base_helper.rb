@@ -22,7 +22,6 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
   # ==== Options
   # @param :invert [Boolean] if the color of the icon should be inverted
   def icon (icon, options = {})
-    #RailsBootstrapHelpers::Helpers::BaseHelper.icon(icon, options)
     options = options.dup
 
     icon = ERB::Util.html_escape(icon.to_s)

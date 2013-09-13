@@ -1,4 +1,7 @@
 module RailsBootstrapHelpers::Helpers::ButtonHelper
+  include RailsBootstrapHelpers::Helpers::OptionsHelper
+  include RailsBootstrapHelpers::Helpers::FormTagHelper
+
   # Renders a Bootstrap button. This method behaves just as "link_to" but will
   # render a Bootstrap button instead of a regular link. Note that this is still
   # an "a" tag and not an "input" tag. In addition to the options "link_to"
@@ -91,5 +94,26 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
     end
 
     content_tag(:div, options, &block)
+  end
+
+  # Renders a dropdown button.
+  #
+  # All options are passed to the underlying button.
+  #
+  # @param text [String] the text of the button
+  #
+  # @param url_or_options [String, Hash] if a string, the button will be rendered
+  #        as split dropdown button. This argument will be interpreted as the
+  #        URL of the button. If an Hash, it will be interpreted as the options
+  #        for the button an a normal dropdown button will be rendered.
+  #
+  # @param options [Hash] if the an URL is passed as the "url_or_options"
+  #        argument this will will be interpreted a hash of options. Otherwise
+  #        it will be ignored.
+  #
+  # @param block [Proc] the block should render a the dropdown menu items in the
+  #        form of list items with links.
+  def bs_dropdown_button_to (text, url_or_options = nil, options = {}, &block)
+    RailsBootstrapHelpers::Renderers::DropdownButtonRenderer.new(self, text, url_or_options, options, &block).render
   end
 end

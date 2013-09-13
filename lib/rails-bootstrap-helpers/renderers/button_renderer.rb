@@ -1,9 +1,11 @@
 module RailsBootstrapHelpers::Renderers
   class ButtonRenderer < AbstractLinkRenderer
+    include RailsBootstrapHelpers::Helpers::BaseHelper
+
     def render
       append_class "btn"
 
-      if style = has_option?("style")
+      if (style = has_option?("style")) && style != "default"
         append_class "btn-" + style.to_s
       end
 

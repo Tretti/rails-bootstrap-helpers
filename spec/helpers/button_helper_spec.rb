@@ -151,4 +151,142 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
       end
     end
   end
+
+  describe "bs_dropdown_button_to" do
+    let(:expected_html) do
+      html = <<-eos
+<div class="btn-group">
+  <button class="dropdown-toggle btn" data-toggle="dropdown" name="button">
+    foo <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="http://www.google.com">bar</a></li>
+    <li><a href="http://www.wikipedia.org">baz</a></li>
+  </ul>
+</div>
+  eos
+
+      strip_expected(html)
+    end
+
+    it "should render a dropdown button" do
+      html = bs_dropdown_button_to "foo" do
+        content_tag(:li, link_to("bar", "http://www.google.com")) +
+        content_tag(:li, link_to("baz", "http://www.wikipedia.org"))
+      end
+
+      strip(html).should == expected_html
+    end
+
+    context "with link" do
+      let(:expected_html) do
+        html = <<-eos
+<div class="btn-group">
+  <a href="https://github.com" class="btn">foo</a>
+  <button class="dropdown-toggle btn" data-toggle="dropdown" name="button">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="http://www.google.com">bar</a></li>
+    <li><a href="http://www.wikipedia.org">baz</a></li>
+  </ul>
+</div>
+  eos
+
+        strip_expected(html)
+      end
+
+      it "should render a split dropdown button" do
+        html = bs_dropdown_button_to "foo", "https://github.com" do
+          content_tag(:li, link_to("bar", "http://www.google.com")) +
+          content_tag(:li, link_to("baz", "http://www.wikipedia.org"))
+        end
+
+        strip(html).should == expected_html
+      end
+    end
+
+    context "with icon" do
+      let(:expected_html) do
+        html = <<-eos
+  <div class="btn-group">
+    <button class="dropdown-toggle btn" data-toggle="dropdown" name="button">
+      <i class="icon-search"></i> foo <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="http://www.google.com">bar</a></li>
+      <li><a href="http://www.wikipedia.org">baz</a></li>
+    </ul>
+  </div>
+    eos
+
+        strip_expected(html)
+      end
+
+      it "should render a dropdown button with an icon" do
+        html = bs_dropdown_button_to "foo", icon: "search" do
+          content_tag(:li, link_to("bar", "http://www.google.com")) +
+          content_tag(:li, link_to("baz", "http://www.wikipedia.org"))
+        end
+
+        strip(html).should == expected_html
+      end
+    end
+
+    context "with link and icon" do
+      let(:expected_html) do
+        html = <<-eos
+<div class="btn-group">
+  <a href="https://github.com" class="btn"><i class="icon-search"></i> foo</a>
+  <button class="dropdown-toggle btn" data-toggle="dropdown" name="button">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="http://www.google.com">bar</a></li>
+    <li><a href="http://www.wikipedia.org">baz</a></li>
+  </ul>
+</div>
+  eos
+
+        strip_expected(html)
+      end
+
+      it "should render a split dropdown button with an icon" do
+        html = bs_dropdown_button_to "foo", "https://github.com", icon: "search" do
+          content_tag(:li, link_to("bar", "http://www.google.com")) +
+          content_tag(:li, link_to("baz", "http://www.wikipedia.org"))
+        end
+
+        strip(html).should == expected_html
+      end
+    end
+
+    context "with link and style" do
+      let(:expected_html) do
+        html = <<-eos
+<div class="btn-group">
+  <a href="https://github.com" class="btn btn-success">foo</a>
+  <button class="dropdown-toggle btn-success btn" data-toggle="dropdown" name="button">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="http://www.google.com">bar</a></li>
+    <li><a href="http://www.wikipedia.org">baz</a></li>
+  </ul>
+</div>
+  eos
+
+        strip_expected(html)
+      end
+
+      it "should render a split dropdown button with the success style" do
+        html = bs_dropdown_button_to "foo", "https://github.com", style: "success" do
+          content_tag(:li, link_to("bar", "http://www.google.com")) +
+          content_tag(:li, link_to("baz", "http://www.wikipedia.org"))
+        end
+
+        strip(html).should == expected_html
+      end
+    end
+  end
 end

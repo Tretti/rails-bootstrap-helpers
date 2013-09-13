@@ -174,6 +174,45 @@ Renders a Bootstrap button group. That is, a div tag with the `btn-group` class.
 
 [Bootstrap documentation](http://getbootstrap.com/2.3.2/components.html#buttonGroups)
 
+#### <a id="bs_dropdown_button_to"></a>bs\_dropdown\_button\_to
+
+Renders a Bootstrap button with a dropdown menu. The menu items are rendered in
+the block by rendering list items (`<li>`) with a link (`<a>`) for the menu items.
+
+If the second argument is a string it will render a split button with a dropdown
+menu. The second argument will be interpreted as the URL to the left side of the
+button. Then the third argument can be used for options.
+
+It accepts all the same options as [bs\_button\_to](#bs_button_to).
+
+Standard button with dropdown menu.
+
+```erb
+<%= bs_dropdown_button_to "foo" do %>
+  <li><%= link_to "Google", "http://www.google.com" %></li>
+  <li><%= link_to "Github", "http://www.github.com" %></li>
+<% end %>
+```
+Split button with a dropdown menu.
+
+```erb
+<%= bs_dropdown_button_to "foo", "http://www.google.com" do %>
+  <li><%= link_to "Google", "http://www.google.com" %></li>
+  <li><%= link_to "Github", "http://www.github.com" %></li>
+<% end %>
+```
+
+Standard button with dropdown menu and an edit icon.
+
+```erb
+<%= bs_dropdown_button_to "foo", icon: "edit" do %>
+  <li><%= link_to "Google", "http://www.google.com" %></li>
+  <li><%= link_to "Github", "http://www.github.com" %></li>
+<% end %>
+```
+
+[Bootstrap documentation](http://getbootstrap.com/2.3.2/components.html#buttonDropdowns)
+
 ### <a id="forms"></a>Forms
 
 #### <a id="bs_button_tag"></a> bs\_button\_tag

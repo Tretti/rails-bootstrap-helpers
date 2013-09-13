@@ -15,9 +15,9 @@ module RailsBootstrapHelpers::Helpers::FormTagHelper
   # @param :icon [String] the name of an icon to render on the button
   # @param :icon_position ["left", "right"] the post of the icon, if present
   # @param :icon_invert [Boolean] if the color of the icon should be inverted
-  def bs_button_tag (value, type, options = {})
+  def bs_button_tag (value, type, options = {}, &block)
     options = options.merge type: type
-    RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :button, value, options).render
+    RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :button, value, options, &block).render
   end
 
   # Renders a Boolean submit tag. This method behaves just as

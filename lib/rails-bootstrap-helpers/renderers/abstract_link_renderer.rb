@@ -22,9 +22,10 @@ module RailsBootstrapHelpers::Renderers
     attr_accessor :options
     attr_accessor :html_options
     attr_accessor :text
+    attr_accessor :type
 
     def method
-      case @type
+      case type
         when :link then :link_to
         when :button then :button_tag
         else :link_to
@@ -32,7 +33,7 @@ module RailsBootstrapHelpers::Renderers
     end
 
     def new_args
-      case @type
+      case type
         when :link
           [text, options, html_options, *self.args[3 .. -1]]
         when :button then
@@ -82,6 +83,10 @@ module RailsBootstrapHelpers::Renderers
       self.html_options = args[2] || {}
       self.html_options = bs_options(html_options)
       self.html_options = html_options.stringify_keys
+
+      if cls = html_options["class"]
+        html_options["class"] = cls.dup
+      end
     end
 
     def _has_option? (key, options, html_options = nil)

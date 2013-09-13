@@ -1,14 +1,6 @@
 require "spec_helper"
 
 describe RailsBootstrapHelpers::Helpers::NavigationHelper do
-  def strip (html)
-    html.gsub!("\n", "")
-  end
-
-  def strip_expected (html)
-    html.gsub(/^\s+/, "").gsub("\n", "")
-  end
-
   let(:foo_tab_text) { "foo" }
   let(:bar_tab_text) { "bar" }
 

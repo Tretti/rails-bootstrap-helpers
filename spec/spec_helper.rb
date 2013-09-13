@@ -13,6 +13,7 @@ Spork.prefork do
 
   RSpec.configure do |config|
     config.order = "random"
+    config.include Html
   end
 end
 

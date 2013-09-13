@@ -16,6 +16,7 @@
 * Add new helper `row_link_to`
 * Add new tabbable navigation helper `tabbable`
 * Add "inline" HTML class to inline buttons
+* Add new dropdown button helper `bs_dropdown_button_to`
 
 ### Bugs Fixed
 * "class" option not being passed through button helpers
