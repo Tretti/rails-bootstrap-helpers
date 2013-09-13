@@ -15,6 +15,7 @@
 * Add new helper `iconic_icon`
 * Add new helper `row_link_to`
 * Add new tabbable navigation helper `tabbable`
+* Add "inline" HTML class to inline buttons
 
 ### Bugs Fixed
 * "class" option not being passed through button helpers
