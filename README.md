@@ -423,6 +423,9 @@ option `active: true`.
 The above option will render the tabbable container with a border. Requires
 the Jasny Bootstrap extensions.
 
+Add the option `direction`, with the value `"top"`, `"left"`, `"right"` or
+`"below"`, to render the tabs in the direction specified.
+
 [Bootstrap documentation](http://getbootstrap.com/2.3.2/components.html#navs)
 [Jasny Bootstrap documentation](http://jasny.github.io/bootstrap/components.html#navs)
 
