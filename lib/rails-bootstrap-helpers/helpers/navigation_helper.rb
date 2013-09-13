@@ -1,4 +1,6 @@
 module RailsBootstrapHelpers::Helpers::NavigationHelper
+  include RailsBootstrapHelpers::Helpers::OptionsHelper
+
   # Renders a Bootstrap tabbable navigation.
   #
   # @param args [Array<String>, Hash] an array of the names of the tab items.

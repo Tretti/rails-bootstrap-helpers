@@ -184,6 +184,53 @@ describe RailsBootstrapHelpers::Helpers::NavigationHelper do
           strip(html).should == expected_html
         end
       end
+
+      context "with direction" do
+        context "unspecified" do
+          let(:html_class) { "tabbable" }
+
+          it "should render a tabbable navigation with the tabs on top" do
+            html = tabbable(foo_tab_text, &block)
+            strip(html).should == expected_html
+          end
+        end
+
+        context "top" do
+          let(:html_class) { "tabbable" }
+
+          it "should render a tabbable navigation with the tabs on top" do
+            html = tabbable(foo_tab_text, direction: "top", &block)
+            strip(html).should == expected_html
+          end
+        end
+
+        context "bottom" do
+          let(:html_class) { "tabbable tabs-below" }
+
+          it "should render a tabbable navigation with the tabs on the bottom" do
+            html = tabbable(foo_tab_text, direction: "below", &block)
+            strip(html).should == expected_html
+          end
+        end
+
+        context "left" do
+          let(:html_class) { "tabbable tabs-left" }
+
+          it "should render a tabbable navigation with the tabs on the left" do
+            html = tabbable(foo_tab_text, direction: "left", &block)
+            strip(html).should == expected_html
+          end
+        end
+
+        context "right" do
+          let(:html_class) { "tabbable tabs-right" }
+
+          it "should render a tabbable navigation with the tabs on the right" do
+            html = tabbable(foo_tab_text, direction: "right", &block)
+            strip(html).should == expected_html
+          end
+        end
+      end
     end
   end
 end

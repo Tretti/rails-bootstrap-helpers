@@ -1,20 +1,3 @@
-# <div class="tabbable" id="foo">
-#   <ul class="nav nav-tabs">
-#     <li><a href="#{foo_tab_id}">foo</a></li>
-#     <li><a href="#{bar_tab_id}">bar</a></li>
-#   </ul>
-# 
-#   <div class="tab-content">
-#     <div id="#{foo_tab_id}">
-#       foo content
-#     </div>
-# 
-#     <div id="#{bar_tab_id}">
-#       bar content
-#     </div>
-#   </div>
-# </div>
-
 module RailsBootstrapHelpers::Renderers
   class TabbableRenderer < Renderer
     def initialize (template, *args, &block)
@@ -52,6 +35,7 @@ module RailsBootstrapHelpers::Renderers
     attr_reader :block
     attr_reader :options
     attr_accessor :ids
+    attr_accessor :fade
 
     def active_tabs?
       @active_tabs
@@ -76,7 +60,8 @@ module RailsBootstrapHelpers::Renderers
 
     def extract_options!
       if args.last.is_a?(Hash)
-        @options = args.last
+        @options = args.last.dup
+        @fade = @options.delete(:fade)
         @tabs = args[0 ... -1]
       else
         @tabs = args
@@ -108,10 +93,15 @@ module RailsBootstrapHelpers::Renderers
     end
 
     def render_tabbable
-      cls = "tabbable"
-      cls << " tabbable-bordered" if options[:bordered]
+      append_class!(options, "tabbable")
+      append_class!(options, "tabbable-bordered") if options.delete(:bordered)
 
-      content_tag :div, class: cls do
+      if direction = options.delete(:direction)
+        direction = class_for_direction(direction)
+        append_class!(options, direction)
+      end
+
+      content_tag :div, options do
         render_tabs + "\n" +
         render_tab_content
       end
@@ -157,7 +147,7 @@ module RailsBootstrapHelpers::Renderers
 
       cls = "tab-pane"
       cls << " active" if active
-      cls << " fade in" if options[:fade]
+      cls << " fade in" if fade
       content_tag :div, id: "#{id}", class: cls, &pane.block
     end
 
@@ -165,6 +155,11 @@ module RailsBootstrapHelpers::Renderers
       id = "tab_pane_#{@last_id}_#{name.object_id}"
       @last_id += 1
       id
+    end
+
+    def class_for_direction (direction)
+      direction = ERB::Util.html_escape(direction.to_s)
+      direction == "top" ? "" : "tabs-#{direction}"
     end
 
     class TabContext
