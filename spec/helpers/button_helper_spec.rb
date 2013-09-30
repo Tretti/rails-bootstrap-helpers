@@ -92,6 +92,13 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
     context "with custom placement" do
       it "should render a button with a popover" do
         attributes[:"data-placement"] = "top"
+        helper.bs_popover_button("foo", "bar", position: "top").should == html
+      end
+    end
+
+    context "with deprecated options" do
+      it "should render a button with a popover" do
+        attributes[:"data-placement"] = "top"
         helper.bs_popover_button("foo", "bar", placement: "top").should == html
       end
     end

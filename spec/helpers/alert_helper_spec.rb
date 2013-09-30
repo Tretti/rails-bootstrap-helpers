@@ -5,15 +5,19 @@ describe RailsBootstrapHelpers::Helpers::AlertHelper do
     it { should render_bs_alert("foo") }
 
     context "with type" do
-      it { should render_bs_alert("foo").with_type(:error) }
-      it { should render_bs_alert("foo").with_type(:success) }
-      it { should render_bs_alert("foo").with_type(:info) }
-      it { should render_bs_alert("foo").with_type(:warning) }
-      it { should render_bs_alert("foo").with_type(:default) }
-      it { should render_bs_alert("foo").with_type(:notice).as_class(:success) }
+      it { should render_bs_alert("foo").with_style(:error) }
+      it { should render_bs_alert("foo").with_style(:success) }
+      it { should render_bs_alert("foo").with_style(:info) }
+      it { should render_bs_alert("foo").with_style(:warning) }
+      it { should render_bs_alert("foo").with_style(:default) }
+      it { should render_bs_alert("foo").with_style(:notice).as_class(:success) }
 
       context "custom" do
-        it { should render_bs_alert("foo").with_type(:bar) }
+        it { should render_bs_alert("foo").with_style(:bar) }
+      end
+
+      context "deprecated options" do
+        it { should render_bs_alert("foo").with_type(:error) }
       end
     end
 

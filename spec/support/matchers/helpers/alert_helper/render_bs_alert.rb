@@ -12,15 +12,15 @@ RSpec::Matchers.define :render_bs_alert do |text|
   def cls
     cls = "alert"
 
-    if type?
-      type = options[:type].to_s
+    if style? || type?
+      style = (options[:style] || options[:type]).to_s
 
-      if type == "notice"
-        type = "success"
+      if style == "notice"
+        style = "success"
       end
 
-      unless type == "warning" || type == "default"
-        cls << " alert-#{type}"
+      unless style == "warning" || style == "default"
+        cls << " alert-#{style}"
       end
     end
 
@@ -53,7 +53,11 @@ RSpec::Matchers.define :render_bs_alert do |text|
   end
 
   def html_class
-    @html_class ||= class? ? options[:class].to_s : options[:status].to_s
+    @html_class ||= class? ? @class.to_s : options[:status].to_s
+  end
+
+  def style?
+    @style_set
   end
 
   def type?
@@ -69,7 +73,12 @@ RSpec::Matchers.define :render_bs_alert do |text|
   end
 
   def class?
-    @class_set
+    !@class.nil?
+  end
+
+  chain :with_style do |style|
+    options[:style] = style
+    @style_set = true
   end
 
   chain :with_type do |type|
@@ -88,8 +97,7 @@ RSpec::Matchers.define :render_bs_alert do |text|
   end
 
   chain :as_class do |cls|
-    options[:class] = cls
-    @class_set = true
+    @class = cls
   end
 
   match do
@@ -109,6 +117,7 @@ RSpec::Matchers.define :render_bs_alert do |text|
     desc = "render an alert '#{text}'"
     desc << " as block" if block?
     desc << " with dismiss button" if dismiss_button?
+    desc << " with the style: #{options[:style]}" if style?
     desc << " with the type: #{options[:type]}" if type?
     desc << " as the class #{html_class}" if class?
     desc

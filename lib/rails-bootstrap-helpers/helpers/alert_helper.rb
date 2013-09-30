@@ -6,30 +6,38 @@ module RailsBootstrapHelpers::Helpers::AlertHelper
   # @param text [String] the text to render in the alert
   #
   # ==== Options
-  # @param :type [String] the type of alert to render
+  # @param :style [String] the style of alert to render
   # @param :block [Boolean] indicates if the alert should render with block style
   # @param :dismiss_button [Boolean] indicates if an dismiss button should be
   #        added to the alert
   def bs_alert (text, options = {})
+    options = options.deep_dup
     cls = "alert"
+    type = options.delete(:type)
 
-    if type = options[:type]
-      type = type.to_s
+    if type
+      ActiveSupport::Deprecation.warn "Usage of the option `:type` is deprecated. Please use the `:style` option instead"
+    end
 
-      if type == "notice"
-        type = "success"
+    if style = options.delete(:style) || type
+      style = style.to_s
+
+      if style == "notice"
+        style = "success"
       end
 
-      unless type == "warning" || type == "default"
-        cls << " alert-#{type}"
+      unless style == "warning" || style == "default"
+        cls << " alert-#{style}"
       end
     end
 
-    if type = options[:block]
+    if style = options.delete(:block)
       cls << " alert-block"
     end
 
-    if dismiss_button = options[:dismiss_button]
+    append_class!(options, cls)
+
+    if options.delete(:dismiss_button)
       content_tag :div, class: cls do
         button = content_tag :button, "×",
           type: "button",
@@ -39,7 +47,7 @@ module RailsBootstrapHelpers::Helpers::AlertHelper
         button + text
       end
     else
-      content_tag :div, text, class: cls
+      content_tag :div, text, options
     end
   end
 end

@@ -49,11 +49,18 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
     if block_given?
       bs_popover_button(name, capture(&block).gsub("\n", ""), content_or_options || {})
     else
-      placement = options.delete(:position) || options.delete(:placement) || "bottom"
+      options = options.deep_dup
+      placement = options.delete(:placement)
+
+      if placement
+        ActiveSupport::Deprecation.warn "Usage of the option `:placement` is deprecated. Please use the `:position` option instead"
+      end
+
+      position = options.delete(:position) || placement || "bottom"
 
       options = options.reverse_merge :"data-content" => content_or_options,
         :"data-toggle" => "popover",
-        :"data-placement" => placement
+        :"data-placement" => position
 
       bs_button_to(name, '#', options)
     end

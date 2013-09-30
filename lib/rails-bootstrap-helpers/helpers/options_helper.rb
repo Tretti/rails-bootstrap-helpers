@@ -41,7 +41,7 @@ module RailsBootstrapHelpers::Helpers::OptionsHelper
   def append_class! (options, *new_classes)
     return options if new_classes.empty?
     key = options.key?("class") ? "class" : :class
-    cls = options[key] || ""
+    cls = options[key].to_s || ""
 
     if cls.present? && new_classes.first.present?
       cls << " "
