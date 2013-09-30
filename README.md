@@ -5,7 +5,7 @@ Rails Bootstrap Helpers is a plugin for Ruby on Rails that adds view helpers for
 for [Jasny's Bootstrap extensions](http://jasny.github.io/bootstrap/index.html).
 
 This documentation is for the upcoming release, that is git HEAD.
-For documentation for the latest release see: https://github.com/Tretti/rails-bootstrap-helpers/blob/v0.0.1/README.md
+For documentation for the latest release see: https://github.com/Tretti/rails-bootstrap-helpers/blob/v0.1.0/README.md
 
 ## Installation
 
