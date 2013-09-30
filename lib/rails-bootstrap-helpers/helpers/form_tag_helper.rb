@@ -8,13 +8,12 @@ module RailsBootstrapHelpers::Helpers::FormTagHelper
   #
   # @params options [Hash] a hash of options
   #
-  # ==== Options
-  # @param :style [String, Symbol] the style of the button
-  # @param :size ["large", "small", "mini"] the size of the button
-  # @param :disabled [Boolean] if the button should be disabled or not
-  # @param :icon [String] the name of an icon to render on the button
-  # @param :icon_position ["left", "right"] the post of the icon, if present
-  # @param :icon_invert [Boolean] if the color of the icon should be inverted
+  # @option options [String, Symbol] :style the style of the button
+  # @option options ["large", "small", "mini"] :size the size of the button
+  # @option options [Boolean] :disabled (false) if the button should be disabled or not
+  # @option options [String] :icon the name of an icon to render on the button
+  # @option options ["left", "right"] :icon_position ("left") the post of the icon, if present
+  # @option options [Boolean] :icon_invert (left) if the color of the icon should be inverted
   def bs_button_tag (value, type, options = {}, &block)
     options = options.merge type: type
     RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :button, value, options, &block).render
@@ -26,9 +25,8 @@ module RailsBootstrapHelpers::Helpers::FormTagHelper
   # @param value [String] the text of the submit tag
   # @param options [Hash] a hash of options
   #
-  # ==== Options
-  # @param :style [String, Symbol] the style of the button
-  # @param :size ["large", "small", "mini"] the size of the button
+  # @option options [String, Symbol] :style the style of the button
+  # @option options ["large", "small", "mini"] :size the size of the button
   #
   # All the other options are passed straight through to the underlying
   # <tt>submit_tag</tt> method.

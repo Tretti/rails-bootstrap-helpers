@@ -5,11 +5,13 @@ module RailsBootstrapHelpers::Helpers::AlertHelper
   #
   # @param text [String] the text to render in the alert
   #
-  # ==== Options
-  # @param :style [String] the style of alert to render
-  # @param :block [Boolean] indicates if the alert should render with block style
-  # @param :dismiss_button [Boolean] indicates if an dismiss button should be
-  #        added to the alert
+  # @option options [String] :style the style of alert to render
+  #
+  # @option options [Boolean] :block (false) indicates if the alert should
+  #         render with block style
+  #
+  # @options options [Boolean] :dismiss_button (false) indicates if an dismiss
+  #          button should be added to the alert
   def bs_alert (text, options = {})
     options = options.deep_dup
     cls = "alert"

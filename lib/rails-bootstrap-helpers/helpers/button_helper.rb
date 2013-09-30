@@ -7,14 +7,14 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   # an "a" tag and not an "input" tag. In addition to the options "link_to"
   # handles this method also handles the following options:
   #
-  # ==== Options
-  # @param :style [String, Symbol] the style of the button
-  # @param :size ["large", "small", "mini"] the size of the button
-  # @param :disabled [Boolean] if the button should be disabled or not
-  # @param :icon [String] the name of an icon to render on the button
-  # @param :icon_position ["left", "right"] the position of the icon, if present
-  # @present :icon_invert [Boolean] if the color of the icon should be inverted
-  #   or not
+  # @option options [String, Symbol] :style the style of the button
+  # @option options ["large", "small", "mini"] :size the size of the button
+  # @option options [Boolean] :disabled (false) if the button should be disabled or not
+  # @option options [String] :icon the name of an icon to render on the button
+  # @option options ["left", "right"] :icon_position (left) the position of the icon, if present
+  #
+  # @option options [Boolean] :icon_invert (false) if the color of the icon
+  #         should be inverted or not
   def bs_button_to (*args, &block)
     RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :link, *args, &block).render
   end
@@ -24,7 +24,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   #
   # @param url [String] the URL the button should link to
   # @param icon [String] the icon of the button
-  # @param options [Hash] a hash of options. See bs_button_to
+  # @param options [Hash] a hash of options. See {#bs_button_to}
   #
   # @see #bs_button_to
   def bs_inline_button_to (url, icon, options = {})
@@ -41,8 +41,8 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   #
   # @param block [block] a block rendering the content of the popover
   #
-  # ==== Options
-  # @param :position [String, "bottom", "top", "left", "right"]
+  # @option options [String, "bottom", "top", "left", "right"] :position the
+  #         position of the popover
   #
   # @see #bs_button_to
   def bs_popover_button (name, content_or_options = nil, options = {}, &block)
@@ -86,10 +86,11 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   #
   # @param options [Hash] a hash of options.
   #
-  # ==== Options
-  # @param :vertical [Boolean] if true, appends the "btn-group-vertical" class
-  # @param :toolbar [Boolean] if true, wraps the group in an another group with
-  #        the "btn-toolbar" class
+  # @option options [Boolean] :vertical (false) if true, appends
+  #         the "btn-group-vertical" class
+  #
+  # @option options [Boolean] :toolbar (false) if true, wraps the group in an
+  #         another group with the "btn-toolbar" class
   #
   # All other options are passed to the button group div.
   def button_group (options = {}, &block)

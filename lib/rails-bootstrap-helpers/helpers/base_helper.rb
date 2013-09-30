@@ -7,20 +7,7 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
   #
   # @param icon [String, Symbol] the kind of icon to render
   #
-  # ==== Options
-  # @param :invert [Boolean] if the color of the icon should be inverted
-  def self.icon (icon, options = {})
-
-  end
-
-  # Renders the given icon
-  #
-  # Renders an <tt>i</tt> tag with the class "icon-#{icon}"
-  #
-  # @param icon [String, Symbol] the kind of icon to render
-  #
-  # ==== Options
-  # @param :invert [Boolean] if the color of the icon should be inverted
+  # @option options [Boolean] :invert (false) if the color of the icon should be inverted
   def icon (icon, options = {})
     options = options.dup
 
@@ -43,14 +30,13 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
   #
   # @param icon [String, Symbol] the kind of icon to render
   #
-  # ==== Options
-  # @param :color [String, Symbol] the CSS color of the icon
-  # @param :size [String, Symbol, Number] the CSS font size of the icon
+  # @option options [String, Symbol] :color the CSS color of the icon
+  # @option options [String, Symbol, Number] :size the CSS font size of the icon
   #
-  # @param :bs_style [:warning, :error, :info, :success, :muted]
+  # @option options [:warning, :error, :info, :success, :muted] :bs_style
   #         the Bootstrap style to render the icon in
   #
-  # @param :action_style [:primary, :info, :success, :warning, :danger]
+  # @option options [:primary, :info, :success, :warning, :danger] :action_style
   #         renders the icon with this action link style
   def iconic_icon (icon, options = {})
     RailsBootstrapHelpers::Renderers::IconicIconRenderer.new(self, icon, options).render

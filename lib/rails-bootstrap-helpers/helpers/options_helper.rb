@@ -6,12 +6,11 @@ module RailsBootstrapHelpers::Helpers::OptionsHelper
   # @param options [Hash] a hash of options
   # @param html_options [Hash] a hash of HTML options/attributes
   #
-  # ==== Options
-  # @param :tooltip [String] the text of the tooltip. IF present adds attributes
+  # @option option [String] :tooltip the text of the tooltip. If present adds attributes
   #        for a Bootstrap tooltip. This will add the <tt>data-toggle="tooltip"</tt>
   #        and <tt>title="#{tooltip}" </tt> HTML attributes if not already present
   #
-  # @param :tooltip_location ["left", "right", "top", "bottom"] the position of
+  # @option options ["left", "right", "top", "bottom"] :tooltip_location the position of
   #        the tooltip if <tt>:tooltip</tt> is present. Adds the
   #        <tt>data-placement="#{tooltip_position}"</tt> HTML attribute if not
   #        already present.
