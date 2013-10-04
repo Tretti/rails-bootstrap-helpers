@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/Tretti/rails-bootstrap-helpers"
   s.summary     = "A Rails plugin that contains helpers for Bootstrap"
   s.description = "A Rails plugin that contains helpers for Bootstrap"
+  s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
