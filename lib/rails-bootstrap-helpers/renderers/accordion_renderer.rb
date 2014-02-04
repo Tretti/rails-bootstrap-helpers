@@ -39,14 +39,15 @@ module RailsBootstrapHelpers::Renderers
         foobar = self
         content_tag(:div, class: base) do
           body = "accordion-body"
-          build_heading(group.heading, body, count, accordion_base, group_base) +
-          build_body(body, group.block)
+          random_id = body.object_id
+          build_heading(group.heading, body, count, accordion_base, group_base, random_id) +
+          build_body(body, group.block, random_id)
         end
       end
     end
 
-    def build_heading (heading, body, count, accordion_base, group_base)
-      href = "#{group_base}:nth-child(#{count + 1}) .#{body}.collapse"
+    def build_heading (heading, body, count, accordion_base, group_base, random_id)
+      href = "##{random_id}"
 
       content_tag :div, class: "accordion-heading" do
         content_tag :a, heading,
@@ -56,9 +57,9 @@ module RailsBootstrapHelpers::Renderers
           :"data-parent" => accordion_base
       end
     end
-    
-    def build_body (body, block)
-      content_tag :div, class: body + " collapse" do
+
+    def build_body (body, block, random_id)
+      content_tag :div, class: body + " collapse", id: random_id do
         content_tag :div, class: "accordion-inner", &block
       end
     end
