@@ -36,7 +36,6 @@ module RailsBootstrapHelpers::Renderers
       base = "accordion-group"
 
       selector.base ".#{base}" do |group_base|
-        foobar = self
         content_tag(:div, class: base) do
           body = "accordion-body"
           build_heading(group.heading, body, count, accordion_base, group_base) +
