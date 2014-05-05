@@ -39,7 +39,7 @@ module RailsBootstrapHelpers::Renderers
         content_tag(:div, class: base) do
           body = "accordion-body"
           build_heading(group.heading, body, count, accordion_base, group_base) +
-          build_body(body, group.block)
+          build_body(body, group.block, active: group.active)
         end
       end
     end
@@ -56,14 +56,16 @@ module RailsBootstrapHelpers::Renderers
       end
     end
     
-    def build_body (body, block)
-      content_tag :div, class: body + " collapse" do
+    def build_body (body, block, active: false)
+      css_class = "#{body} collapse"
+      css_class = css_class + " in" if active
+      content_tag :div, class: css_class do
         content_tag :div, class: "accordion-inner", &block
       end
     end
 
     class AccordionContext
-      Group = Struct.new(:heading, :block)
+      Group = Struct.new(:heading, :block, :active)
 
       attr_reader :groups
 
@@ -72,8 +74,8 @@ module RailsBootstrapHelpers::Renderers
         @groups = []
       end
 
-      def group (heading, &block)
-        @groups << Group.new(heading, block)
+      def group (heading, active: false, &block)
+        @groups << Group.new(heading, block, active)
       end
     end
 
